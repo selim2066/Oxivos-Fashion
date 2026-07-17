@@ -23,7 +23,7 @@ export const Footer: React.FC = () => {
         {/* Brand & Description */}
         <div className="col-span-1 md:col-span-2">
           <span className="font-display-xl-mobile text-headline-md font-black tracking-tighter text-primary block mb-unit-md">
-            ELEVATE
+            OXIVOS FASHION
           </span>
           <p className="font-body-md text-body-md text-on-surface-variant max-w-sm">
             Premium technical apparel designed for the intersection of high fashion and the natural world. Inspired by nature, engineered for movement.
@@ -95,7 +95,7 @@ export const Footer: React.FC = () => {
         {/* Copyright */}
         <div className="col-span-1 md:col-span-4 mt-unit-xl border-t border-outline-variant/30 pt-unit-lg flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="font-body-md text-body-sm text-on-surface-variant text-center md:text-left">
-            © {new Date().getFullYear()} ELEVATE. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} OXIVOS FASHION. ALL RIGHTS RESERVED.
           </p>
           <div className="flex gap-6 text-body-sm text-on-surface-variant">
             <a href="#" className="hover:text-primary transition-colors">Privacy Policy</a>

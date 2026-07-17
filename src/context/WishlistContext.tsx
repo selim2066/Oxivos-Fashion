@@ -19,7 +19,7 @@ export const WishlistProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   // Load wishlist from localStorage on mount
   useEffect(() => {
     try {
-      const storedWishlist = localStorage.getItem('elevate_wishlist');
+      const storedWishlist = localStorage.getItem('oxivos_wishlist');
       if (storedWishlist) {
         setWishlistItems(JSON.parse(storedWishlist));
       }
@@ -33,7 +33,7 @@ export const WishlistProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   useEffect(() => {
     if (!isInitialized) return;
     try {
-      localStorage.setItem('elevate_wishlist', JSON.stringify(wishlistItems));
+      localStorage.setItem('oxivos_wishlist', JSON.stringify(wishlistItems));
     } catch (error) {
       console.error('Failed to save wishlist to localStorage:', error);
     }

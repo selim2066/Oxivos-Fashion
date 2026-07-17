@@ -20,7 +20,7 @@ export default function Home() {
             className="w-full h-full bg-cover bg-center bg-no-repeat opacity-90 transition-transform duration-[10000ms] hover:scale-105"
             style={{
               backgroundImage:
-                "url('https://lh3.googleusercontent.com/aida-public/AB6AXuAR-pbI_Hm9wrKN_-xkDc2DJU1QSzhup9e0MjaZ_3ZtYb16rmb_4AJ1RAekNTG0pUOGgkF9kXyftWW4cikKeOmktDeBEUPvOcC0H5xxNIgCxsoZV7bupkrE17TOrBkelr1bXxE-Kh3SSf3-x9Cpuq7X9fiEPccz4aQdWXiS9_tBsSf7XIcOAN-0KXVwGOKZ1UJ_pu0-vFdlbxBfppPGqwamXfdhY-sX1UqqpO-5Z-LZKukDs6N1E9Al')",
+                "url('/assets/hero.png')",
             }}
             aria-label="A massive high-resolution editorial fashion shot. A male model wearing a sleek black blazer stands against a misty alpine mountain landscape."
           />
@@ -31,8 +31,8 @@ export default function Home() {
         <div className="relative z-10 text-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop w-full mt-auto mb-unit-xl">
           {/* Massive Editorial Background Text */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full -z-10 pointer-events-none select-none">
-            <h1 className="font-display-xl text-[15vw] leading-none text-white opacity-85 tracking-tighter mix-blend-overlay font-black uppercase">
-              Elevate
+            <h1 className="font-display-xl text-[12vw] leading-none text-white opacity-85 tracking-tighter mix-blend-overlay font-black uppercase">
+              Oxivos
             </h1>
           </div>
 
@@ -105,7 +105,7 @@ export default function Home() {
             </div>
             <img
               className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNQHvUkrW44CsrfyARyUyzcEms7qeP5ZsjzwgR0p3OSnrKtmeGMBUqFxgy0D6YAMlAgqQp0DpoiwBGkc4vJnuwsIyaQSOGR9d8ptKboCVTRsbRdTk6Pma0wqCkB-orGOYYqyYr_XPPCW6odIvHBC0XLrhSAHfXcu_KpJzURDa_dM4WdSU6k0lLFbdbD-nZlGEvPr4AhjKQFrysBfNbYPsiiwE_6_zHlGblyAJ8QNswsYtnP_xAGGjc"
+              src="/assets/men-collection.png"
               alt="High-fashion studio shot of a male model in a white jacket."
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -121,7 +121,7 @@ export default function Home() {
             </div>
             <img
               className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmx8hX6MS1wvnZSkmR81CxiSBLujPG7vIGrrZ2QJnQ6nJdObt5JJ8XGRnlZM6Pvzz3zgBktNGyXBRb9G_gbG7r6v1mDKNTIN8Paee5P2NZEYzKSelpT5mXmHH7oTPgJmAuGp4_wHXVW0Qvi-lWpmjDTb7Q9aCO7uLhq1rrT06OqkmAsSQaLFLhCLT8SbPRBvjg7-c_I60w5RNCukZTamgLgCmlkNilL0YDmDIE3kowCd1V-B8kmUKB"
+              src="/assets/women-collection.png"
               alt="High-fashion studio shot of a female model in a blue blazer."
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -137,7 +137,7 @@ export default function Home() {
             </div>
             <img
               className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcbsxinmXArtA-gKIFEYsYisYazHpAANeHtSOgDTEKaO2gzzOU5sFC8mzJ1nNexiDRAmSe7uVZI8bOOmc70oIxSRkM8TO4KupaGQs0TQE5bf7pPwp4Lyev13VlKHX9wbcoTFljrH3jrHO_d9sr5zYtBB1hC9q9QFy7DKVb9qBhAYBLLRjEFYNinY-zdvCxBH0AEBiPv0200EP5SwVuh8KdrSLgV-T3OmoVD_rnVVuyD0-532kSXkw6"
+              src="/assets/kids-collection.png"
               alt="Studio fashion shot of a child wearing a stylish denim jacket."
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />

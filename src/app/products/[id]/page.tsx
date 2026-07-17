@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const product = products.find((p) => p.id === parseInt(resolvedParams.id, 10));
 
   return {
-    title: product ? `${product.name} | ELEVATE` : "Product Not Found | ELEVATE",
+    title: product ? `${product.name} | OXIVOS FASHION` : "Product Not Found | OXIVOS FASHION",
     description: product
       ? product.description
       : "Premium technical apparel at the intersection of high fashion and the natural world.",
