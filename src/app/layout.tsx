@@ -1,0 +1,52 @@
+import type { Metadata } from "next";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import "./globals.css";
+import { CartProvider } from "../context/CartContext";
+import { WishlistProvider } from "../context/WishlistContext";
+import { Header } from "../components/layout/Header";
+import { Footer } from "../components/layout/Footer";
+import { SmoothScroll } from "../components/layout/SmoothScroll";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta-sans",
+  subsets: ["latin"],
+  display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+export const metadata: Metadata = {
+  title: "Oxivos Fashion — Premium Fashion",
+  description:
+    "Inspired by nature. Designed for movement. Premium technical apparel at the intersection of high fashion and the natural world.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html
+      lang="en"
+      className={`${inter.variable} ${plusJakartaSans.variable} h-full`}
+    >
+      <body className="min-h-full flex flex-col bg-background text-on-surface">
+        <SmoothScroll>
+          <CartProvider>
+            <WishlistProvider>
+              <Header />
+              <div className="flex-grow flex flex-col">{children}</div>
+              <Footer />
+            </WishlistProvider>
+          </CartProvider>
+        </SmoothScroll>
+      </body>
+    </html>
+  );
+}
