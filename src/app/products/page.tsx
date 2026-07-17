@@ -150,6 +150,7 @@ const ProductsListContent: React.FC = () => {
                 <option value="Men">Men</option>
                 <option value="Women">Women</option>
                 <option value="Kids">Kids</option>
+                <option value="Accessories">Accessories</option>
               </select>
             )}
 

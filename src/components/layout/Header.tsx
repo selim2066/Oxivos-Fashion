@@ -71,6 +71,7 @@ export const Header: React.FC = () => {
     { label: "Men", href: "/products?category=Men" },
     { label: "Women", href: "/products?category=Women" },
     { label: "Kids", href: "/products?category=Kids" },
+    { label: "Accessories", href: "/products?category=Accessories" },
   ];
 
   return (
