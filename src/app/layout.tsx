@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   title: "Oxivos Fashion — Premium Fashion",
   description:
     "Inspired by nature. Designed for movement. Premium technical apparel at the intersection of high fashion and the natural world.",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
