@@ -186,7 +186,7 @@ export const Header: React.FC = () => {
               aria-label="View wishlist"
             >
               <Heart className="w-5 h-5" />
-              {wishlistItems.length > 0 && (
+              {isMounted && wishlistItems.length > 0 && (
                 <span
                   className="absolute -top-1 -right-1 w-4 h-4 rounded-full flex items-center justify-center font-bold text-[9px]"
                   style={{ backgroundColor: 'var(--color-secondary)', color: 'var(--color-on-secondary)' }}
@@ -203,7 +203,7 @@ export const Header: React.FC = () => {
               aria-label="View cart"
             >
               <ShoppingBag className="w-5 h-5" />
-              {cartCount > 0 && (
+              {isMounted && cartCount > 0 && (
                 <span
                   className="absolute -top-1 -right-1 w-4 h-4 rounded-full flex items-center justify-center font-bold text-[9px]"
                   style={{ backgroundColor: 'var(--color-elevate-primary)', color: 'var(--color-on-primary)' }}

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
 // ─── Slide Data ──────────────────────────────────────────────────────────────
@@ -25,7 +25,7 @@ const heroSlides: HeroSlide[] = [
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1614805104608-6402e52d0dd6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1648598029533-c5c9ba79ab26?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     headline: "ELEVATED CODES",
     subtext: "Technical fabrics engineered for effortless modern movement.",
   },
@@ -222,15 +222,12 @@ export const HeroSection: React.FC = () => {
                 transition={{ delay: 0.34, duration: 0.5 }}
                 className="flex items-center gap-5"
               >
-                <Link href="/products" passHref legacyBehavior>
-                  <Button
-                    variant="default"
-                    size="lg"
-                    className="uppercase tracking-widest font-bold h-11 px-7 flex items-center gap-2 group/btn transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl text-xs"
-                  >
-                    <span>Explore Collection</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
-                  </Button>
+                <Link
+                  href="/products"
+                  className={buttonVariants({ variant: "default", size: "lg", className: "uppercase tracking-widest font-bold h-11 px-7 inline-flex items-center gap-2 group/btn transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl text-xs" })}
+                >
+                  <span>Explore Collection</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="/products"
