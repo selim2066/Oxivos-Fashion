@@ -39,14 +39,23 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
   return (
     <>
       <div className="group relative flex flex-col w-full">
-        {/* Image Container with 3:4 aspect ratio */}
-        <div className="relative bg-card-bg aspect-[3/4] mb-unit-md overflow-hidden rounded-sm flex items-center justify-center">
+        {/* Image Container with square aspect ratio */}
+        <div className="relative bg-card-bg aspect-square mb-unit-sm overflow-hidden rounded-lg flex items-center justify-center border border-outline-variant/10">
           {/* Out of Stock Badge */}
           {!product.inStock && (
             <div className="absolute top-4 left-4 z-10 bg-error text-on-error font-label-sm px-3 py-1 rounded-full uppercase tracking-wider">
               Sold Out
             </div>
           )}
+
+          {/* Wishlist Button (fades in on hover) */}
+          <button
+            onClick={() => toggleWishlist(product)}
+            className="absolute top-4 right-4 z-20 bg-surface-container-lowest/90 backdrop-blur text-primary p-2 rounded-full hover:bg-primary hover:text-on-primary transition-all duration-300 shadow-sm opacity-0 group-hover:opacity-100"
+            aria-label={isFavorite ? "Remove from wishlist" : "Add to wishlist"}
+          >
+            <Heart className={`w-4 h-4 ${isFavorite ? "fill-primary text-primary" : ""}`} />
+          </button>
 
           {/* Product Image */}
           <img
@@ -57,43 +66,29 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             }`}
           />
 
-          {/* Quick View and Action Overlay (hidden on touch, hover on desktop) */}
-          <div className="absolute inset-0 bg-primary/5 flex flex-col items-center justify-between p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <button
-              onClick={() => toggleWishlist(product)}
-              className="self-end bg-surface-container-lowest text-primary p-2 rounded-full hover:bg-primary hover:text-on-primary transition-all duration-300 shadow-elevate"
-              aria-label={isFavorite ? "Remove from wishlist" : "Add to wishlist"}
-            >
-              <Heart className={`w-4.5 h-4.5 ${isFavorite ? "fill-primary" : ""}`} />
-            </button>
-
-            <button
-              onClick={() => setIsQuickViewOpen(true)}
-              className="bg-surface-container-lowest text-primary font-label-md text-label-md uppercase px-unit-lg py-unit-sm tracking-wider shadow-elevate hover:bg-primary hover:text-on-primary transition-colors duration-300 rounded-DEFAULT"
-            >
-              Quick View
-            </button>
-
-            {/* Spacer */}
-            <div className="h-9" />
-          </div>
+          {/* Quick View slide-up overlay */}
+          {product.inStock && (
+            <div className="absolute bottom-0 left-0 w-full p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
+              <button
+                onClick={() => setIsQuickViewOpen(true)}
+                className="w-full bg-primary/90 backdrop-blur text-on-primary font-label-sm py-3 rounded-DEFAULT hover:bg-primary transition-colors uppercase tracking-wider text-xs font-semibold shadow-sm"
+              >
+                Quick View
+              </button>
+            </div>
+          )}
         </div>
 
-        {/* Product Details (bottom-aligned) */}
-        <div className="flex justify-between items-start mt-auto">
-          <div className="flex-grow pr-2">
-            <Link href={`/products/${product.id}`} className="hover:underline">
-              <h3 className="font-label-md text-label-md text-primary mb-1 uppercase tracking-wider">
-                {product.name}
-              </h3>
-            </Link>
-            <p className="font-label-sm text-label-sm text-on-surface-variant">
-              {product.subtitle || `${product.colors.join(" / ")}`}
-            </p>
-          </div>
-          <span className="font-label-md text-label-md text-primary font-semibold">
+        {/* Product Details (left-aligned per design reference) */}
+        <div className="flex flex-col mt-1 text-left">
+          <Link href={`/products/${product.id}`} className="hover:underline">
+            <h3 className="font-label-md text-label-md text-primary mb-0.5 uppercase tracking-wider font-semibold">
+              {product.name}
+            </h3>
+          </Link>
+          <p className="font-body-md text-body-md text-on-surface-variant font-medium">
             ${product.price}
-          </span>
+          </p>
         </div>
       </div>
 
