@@ -214,7 +214,7 @@ export const HeroSection: React.FC = () => {
               initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
               animate={{ opacity: 0.8, y: 0 }}
               transition={{ delay: 0.26, duration: 0.5 }}
-              className="text-body-md text-white/80 mb-8 max-w-lg leading-relaxed whitespace-nowrap overflow-hidden text-ellipsis w-full block"
+              className="text-body-md text-white/80 mb-8 max-w-lg leading-relaxed w-full block"
             >
               {activeSlide.subtext}
             </motion.p>
