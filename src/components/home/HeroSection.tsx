@@ -29,7 +29,7 @@ const heroSlides: HeroSlide[] = [
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1624918215128-0f813a760633?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1614805104608-6402e52d0dd6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     headline: "ELEVATED CODES",
     subtext: "Technical fabrics engineered for effortless modern movement.",
     edition: "EDITION — 02",
@@ -37,7 +37,7 @@ const heroSlides: HeroSlide[] = [
   },
   {
     id: 3,
-    image: "https://plus.unsplash.com/premium_photo-1707932476876-85c87378ea62?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1749032715101-ec47da1727e7?q=80&w=1143&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     headline: "TRANSIT LAYERS",
     subtext: "A curated edit of refined silhouettes, built for transitional climates.",
     edition: "EDITION — 03",
@@ -122,7 +122,7 @@ export const HeroSection: React.FC = () => {
   };
 
   return (
-    <section 
+    <section
       className="relative w-full h-[90vh] md:h-screen bg-black overflow-hidden flex flex-col justify-center"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -200,7 +200,7 @@ export const HeroSection: React.FC = () => {
             >
               — The Collection —
             </motion.span>
-            
+
             <motion.h1
               initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -209,7 +209,7 @@ export const HeroSection: React.FC = () => {
             >
               {activeSlide.headline}
             </motion.h1>
-            
+
             <motion.p
               initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
               animate={{ opacity: 0.8, y: 0 }}
@@ -218,7 +218,7 @@ export const HeroSection: React.FC = () => {
             >
               {activeSlide.subtext}
             </motion.p>
-            
+
             <motion.div
               initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
