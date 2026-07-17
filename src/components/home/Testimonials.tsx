@@ -99,7 +99,7 @@ export function Testimonials() {
   const active = testimonials[activeIndex];
 
   return (
-    <section className="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-t border-outline-variant/30">
+    <section className="py-16 md:py-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-t border-outline-variant/30">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-unit-xl md:gap-16 items-start">
 
         {/* ── Left Column ────────────────────────────────────── */}
@@ -110,12 +110,12 @@ export function Testimonials() {
           </span>
 
           {/* Section Headline */}
-          <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary tracking-tight leading-tight mb-unit-lg">
+          <h2 className="font-headline-md text-headline-lg-mobile md:text-headline-md text-primary tracking-tight leading-tight mb-unit-md">
             Words from those<br />who&apos;ve worn it.
           </h2>
 
           {/* Active Portrait Image */}
-          <div className="relative w-full aspect-[4/5] rounded overflow-hidden mb-unit-md">
+          <div className="relative w-full rounded overflow-hidden mb-unit-md" style={{ height: '38vh', maxHeight: '320px' }}>
             <AnimatePresence mode="wait">
               <motion.img
                 key={active.id}
