@@ -9,6 +9,8 @@ import { products } from "@/lib/products";
 export default function Home() {
   // Get first 3 products for featured new arrivals
   const featuredProducts = products.slice(0, 3);
+  // Get highest rated products as best sellers
+  const bestSellers = products.filter((p) => p.rating >= 4.8).slice(0, 3);
 
   return (
     <main className="bg-surface text-on-surface min-h-screen overflow-x-hidden pt-16">
@@ -142,6 +144,29 @@ export default function Home() {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
           </Link>
+        </div>
+      </section>
+
+      {/* Best Sellers Section */}
+      <section className="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-t border-outline-variant/30">
+        <div className="mb-unit-xl">
+          <span className="text-label-sm font-bold uppercase tracking-widest text-secondary block mb-1">
+            Customer Favorites
+          </span>
+          <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase">
+            Best Sellers
+          </h2>
+          <p className="font-body-md text-on-surface-variant mt-2 max-w-xl">
+            Refined technical essentials recommended by our community. Built to endure, styled for the modern landscape.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+          {bestSellers.map((product) => (
+            <div key={product.id} className="flex flex-col">
+              <ProductCard product={product} />
+            </div>
+          ))}
         </div>
       </section>
 
