@@ -115,13 +115,13 @@ export function Testimonials() {
           </h2>
 
           {/* Active Portrait Image */}
-          <div className="relative w-full rounded overflow-hidden mb-unit-md" style={{ height: '38vh', maxHeight: '320px' }}>
+          <div className="relative w-full rounded overflow-hidden mb-unit-md bg-card-bg" style={{ height: '38vh', maxHeight: '320px' }}>
             <AnimatePresence mode="wait">
               <motion.img
                 key={active.id}
                 src={active.image}
                 alt={active.name}
-                className="absolute inset-0 w-full h-full object-cover grayscale"
+                className="absolute inset-0 w-full h-full object-contain grayscale"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
