@@ -8,17 +8,17 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-white hover:bg-primary/95",
+        default: "bg-primary !text-white [&_svg]:!text-white hover:bg-primary/95",
         outline:
           "border-outline-variant bg-transparent text-primary hover:bg-surface-container-low hover:text-primary",
         secondary:
-          "bg-secondary text-white hover:bg-secondary/95",
+          "bg-secondary !text-white [&_svg]:!text-white hover:bg-secondary/95",
         glass:
           "bg-white/95 dark:bg-surface-container-lowest/95 backdrop-blur text-primary hover:bg-white dark:hover:bg-surface-container-lowest transition-all border border-outline-variant/10 font-label-md text-label-md uppercase tracking-wider font-semibold",
         ghost:
           "hover:bg-surface-container-low hover:text-primary",
         destructive:
-          "bg-error text-white hover:bg-error/95",
+          "bg-error !text-white [&_svg]:!text-white hover:bg-error/95",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
@@ -52,6 +52,7 @@ function Button({
   return (
     <ButtonPrimitive
       data-slot="button"
+      data-variant={variant}
       className={cn(buttonVariants({ variant, size, className }))}
       {...props}
     />

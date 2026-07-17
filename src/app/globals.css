@@ -260,4 +260,16 @@
   html {
     @apply scroll-smooth;
   }
+
+  /* Force white text on filled button variants regardless of Tailwind class order */
+  [data-slot="button"][data-variant="default"],
+  [data-slot="button"][data-variant="secondary"],
+  [data-slot="button"][data-variant="destructive"] {
+    color: #ffffff !important;
+  }
+  [data-slot="button"][data-variant="default"] svg,
+  [data-slot="button"][data-variant="secondary"] svg,
+  [data-slot="button"][data-variant="destructive"] svg {
+    color: #ffffff !important;
+  }
 }
