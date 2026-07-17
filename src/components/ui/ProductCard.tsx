@@ -10,9 +10,15 @@ import { useWishlist } from "../../context/WishlistContext";
 
 interface ProductCardProps {
   product: Product;
+  showAddToCart?: boolean;
+  showRating?: boolean;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+export const ProductCard: React.FC<ProductCardProps> = ({
+  product,
+  showAddToCart = false,
+  showRating = false,
+}) => {
   const { addItem } = useCart();
   const { toggleWishlist, isInWishlist } = useWishlist();
   const [isQuickViewOpen, setIsQuickViewOpen] = useState(false);
@@ -36,11 +42,30 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
     setTimeout(() => setAddedNotification(false), 2000);
   };
 
+  const handleAddToCartDirect = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (!product.inStock) return;
+    addItem(product, selectedColor, selectedSize, 1);
+    setAddedNotification(true);
+    setTimeout(() => setAddedNotification(false), 2000);
+  };
+
   return (
     <>
       <div className="group relative flex flex-col w-full">
         {/* Image Container with square aspect ratio */}
         <div className="relative bg-card-bg aspect-square mb-unit-sm overflow-hidden rounded-lg flex items-center justify-center border border-outline-variant/10">
+          {/* Rating Badge */}
+          {showRating && product.rating !== undefined && (
+            <div className={`absolute left-4 z-10 bg-surface-container-lowest/95 backdrop-blur-sm text-primary px-2.5 py-0.5 rounded-DEFAULT text-[10px] font-bold tracking-wider flex items-center gap-1 shadow-sm border border-outline-variant/15 ${
+              !product.inStock ? "top-12" : "top-4"
+            }`}>
+              <span className="text-amber-500">★</span>
+              <span>{product.rating.toFixed(1)}</span>
+            </div>
+          )}
+
           {/* Out of Stock Badge */}
           {!product.inStock && (
             <div className="absolute top-4 left-4 z-10 bg-error text-on-error font-label-sm px-3 py-1 rounded-full uppercase tracking-wider">
@@ -89,6 +114,24 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <p className="font-body-md text-body-md text-on-surface-variant font-medium">
             ${product.price}
           </p>
+
+          {/* Add to Cart Button */}
+          {showAddToCart && (
+            <button
+              onClick={handleAddToCartDirect}
+              disabled={!product.inStock}
+              className={`w-full mt-3 py-2.5 px-4 font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT transition-all duration-300 flex justify-center items-center gap-2 shadow-sm ${
+                !product.inStock
+                  ? "bg-outline-variant/30 text-on-surface-variant/50 cursor-not-allowed border border-outline-variant/20"
+                  : addedNotification
+                  ? "bg-secondary text-on-secondary hover:bg-secondary/90"
+                  : "bg-primary text-on-primary hover:bg-primary/90"
+              }`}
+            >
+              <ShoppingBag className="w-3.5 h-3.5" />
+              <span>{addedNotification ? "Added" : "Add to Bag"}</span>
+            </button>
+          )}
         </div>
       </div>
 

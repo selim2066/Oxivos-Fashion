@@ -213,7 +213,7 @@ const ProductsListContent: React.FC = () => {
         <>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-gutter gap-y-unit-xl">
             {displayProducts.map((product) => (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={product.id} product={product} showAddToCart showRating />
             ))}
           </div>
 
