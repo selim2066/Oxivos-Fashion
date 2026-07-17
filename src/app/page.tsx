@@ -6,6 +6,7 @@ import { ProductCard } from "@/components/ui/ProductCard";
 import { products } from "@/lib/products";
 import { FeaturedCollection } from "@/components/ui/FeaturedCollection";
 import { HeroSection } from "@/components/home/HeroSection";
+import { Testimonials } from "@/components/home/Testimonials";
 
 export default function Home() {
   // Get first 3 products for featured new arrivals
@@ -92,6 +93,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Testimonials */}
+      <Testimonials />
     </main>
   );
 }
