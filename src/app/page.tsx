@@ -7,6 +7,7 @@ import { products } from "@/lib/products";
 import { FeaturedCollection } from "@/components/ui/FeaturedCollection";
 import { HeroSection } from "@/components/home/HeroSection";
 import { Testimonials } from "@/components/home/Testimonials";
+import { CategorySection } from "@/components/home/CategorySection";
 
 export default function Home() {
   // Get first 3 products for featured new arrivals
@@ -18,6 +19,9 @@ export default function Home() {
     <main className="bg-surface text-on-surface min-h-screen overflow-x-hidden pt-0">
       {/* Hero Section */}
       <HeroSection />
+
+      {/* Category Section */}
+      <CategorySection />
 
       {/* Featured Collection Section */}
       <FeaturedCollection />

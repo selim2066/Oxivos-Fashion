@@ -133,7 +133,7 @@ export const Header: React.FC = () => {
             href="/"
             className={`text-headline-sm md:text-headline-md font-extrabold tracking-tighter hover:opacity-75 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded ${logoColorClass}`}
           >
-            Oxivos Fashion<span className="text-error">.</span>
+            <span className="font-black tracking-tight">OXIVOS</span>{" "}<span className="font-black italic" style={{ color: '#800020' }}>Fashion</span><span className="text-error font-black">.</span>
           </Link>
 
           <div className="hidden md:flex space-x-unit-lg items-center">
@@ -225,7 +225,7 @@ export const Header: React.FC = () => {
           />
           <div className="relative w-4/5 max-w-sm bg-surface h-full shadow-2xl flex flex-col p-6 animate-in slide-in-from-left duration-300">
             <div className="flex justify-between items-center mb-10">
-              <span className="font-extrabold tracking-tighter text-primary text-headline-sm">Oxivos Fashion<span className="text-error">.</span></span>
+              <span className="font-extrabold tracking-tighter text-primary text-headline-sm"><span className="font-black tracking-tight">OXIVOS</span>{" "}<span className="font-black italic" style={{ color: '#800020' }}>Fashion</span><span className="text-error font-black">.</span></span>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-primary p-1"
@@ -277,7 +277,7 @@ export const Header: React.FC = () => {
       {isSearchOpen && (
         <div className="fixed inset-0 z-50 bg-surface/95 backdrop-blur-xl flex flex-col animate-in fade-in duration-300">
           <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-6">
-            <span className="font-extrabold tracking-tighter text-primary text-headline-sm">Oxivos Search<span className="text-error">.</span></span>
+            <span className="font-extrabold tracking-tighter text-primary text-headline-sm"><span className="font-black tracking-tight">OXIVOS</span>{" "}<span className="font-black italic" style={{ color: '#800020' }}>Search</span><span className="text-error font-black">.</span></span>
             <button
               onClick={() => setIsSearchOpen(false)}
               className="text-primary hover:opacity-75 transition-opacity p-2"

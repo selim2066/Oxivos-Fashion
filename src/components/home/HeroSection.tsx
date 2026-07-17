@@ -160,62 +160,88 @@ export const HeroSection: React.FC = () => {
         <img src={nextSlide.image} alt="preload next look" />
       </div>
 
-      {/* Center Text Block (Animated Reveal) */}
-      <div className="relative z-20 max-w-container-max w-full mx-auto px-margin-mobile md:px-margin-desktop flex justify-center text-center mt-auto mb-28">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeSlide.id}
-            initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -15 }}
-            transition={{ duration: 0.7, ease: "easeInOut" }}
-            className="max-w-2xl flex flex-col items-center px-4 md:px-0"
-          >
-            <motion.span
-              initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
-              animate={{ opacity: 0.9, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.5 }}
-              className="text-label-sm uppercase tracking-[0.25em] text-white mb-4"
-            >
-              — The Collection —
-            </motion.span>
-
-            <motion.h1
-              initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.18, duration: 0.5 }}
-              className="font-heading text-headline-lg-mobile md:text-display-xl text-white uppercase tracking-tight mb-4 leading-[1.1] md:leading-none"
-            >
-              {activeSlide.headline}
-            </motion.h1>
-
-            <motion.p
-              initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
-              animate={{ opacity: 0.8, y: 0 }}
-              transition={{ delay: 0.26, duration: 0.5 }}
-              className="text-body-md text-white/80 mb-8 max-w-lg leading-relaxed w-full block"
-            >
-              {activeSlide.subtext}
-            </motion.p>
-
+      {/* Left-Aligned Editorial Text Block */}
+      <div className="relative z-20 w-full mt-auto mb-20 md:mb-24">
+        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+          <AnimatePresence mode="wait">
             <motion.div
-              initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.34, duration: 0.5 }}
+              key={activeSlide.id}
+              initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: 20 }}
+              transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+              className="flex flex-col items-start text-left max-w-xl"
             >
-              <Link href="/products" passHref legacyBehavior>
-                <Button
-                  variant="default"
-                  size="lg"
-                  className="uppercase tracking-widest font-semibold h-12 px-8 flex items-center gap-2 group/btn transition-transform duration-300 hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl"
+              {/* Overline label */}
+              <motion.div
+                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.08, duration: 0.45 }}
+                className="flex items-center gap-3 mb-5"
+              >
+                <span className="w-6 h-[2px] bg-white/50 inline-block" />
+                <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.3em] text-white/65">
+                  The Collection
+                </span>
+              </motion.div>
+
+              {/* Headline with left maroon accent bar */}
+              <div className="flex items-stretch gap-4 mb-5">
+                <motion.div
+                  initial={{ scaleY: 0 }}
+                  animate={{ scaleY: 1 }}
+                  transition={{ delay: 0.15, duration: 0.4, ease: "easeOut" }}
+                  className="w-[3px] rounded-full self-stretch origin-top"
+                  style={{ backgroundColor: "#800020" }}
+                />
+                <motion.h1
+                  initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.18, duration: 0.5 }}
+                  className="font-heading font-black text-white uppercase leading-none"
+                  style={{ fontSize: "clamp(2.4rem, 6.5vw, 5.5rem)", letterSpacing: "-0.03em" }}
                 >
-                  <span>Explore Collection</span>
-                  <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
-              </Link>
+                  {activeSlide.headline}
+                </motion.h1>
+              </div>
+
+              {/* Subtext */}
+              <motion.p
+                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 8 }}
+                animate={{ opacity: 0.75, y: 0 }}
+                transition={{ delay: 0.26, duration: 0.5 }}
+                className="text-sm md:text-base text-white/75 mb-8 max-w-sm leading-relaxed font-light"
+              >
+                {activeSlide.subtext}
+              </motion.p>
+
+              {/* CTA Row */}
+              <motion.div
+                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.34, duration: 0.5 }}
+                className="flex items-center gap-5"
+              >
+                <Link href="/products" passHref legacyBehavior>
+                  <Button
+                    variant="default"
+                    size="lg"
+                    className="uppercase tracking-widest font-bold h-11 px-7 flex items-center gap-2 group/btn transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl text-xs"
+                  >
+                    <span>Explore Collection</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                  </Button>
+                </Link>
+                <Link
+                  href="/products"
+                  className="text-[11px] uppercase tracking-widest text-white/55 hover:text-white transition-colors duration-300 font-semibold border-b border-white/20 hover:border-white/60 pb-0.5"
+                >
+                  View All
+                </Link>
+              </motion.div>
             </motion.div>
-          </motion.div>
-        </AnimatePresence>
+          </AnimatePresence>
+        </div>
       </div>
 
       {/* Bottom Center: Thin Horizontal Progress Bar Indicators */}

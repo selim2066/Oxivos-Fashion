@@ -5,6 +5,71 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
+
+// ─── Letter-by-letter animated wordmark ──────────────────────────────────────
+const wordmark = [
+  { text: "OXIVOS", italic: false, color: "inherit" },
+  { text: " ", italic: false, color: "inherit" },
+  { text: "Fashion", italic: true, color: "#800020" },
+];
+
+const AnimatedWordmark: React.FC = () => {
+  const [hoveredIdx, setHoveredIdx] = React.useState<number | null>(null);
+
+  // Build flat array of characters with metadata
+  const chars: { char: string; italic: boolean; color: string; idx: number }[] = [];
+  let globalIdx = 0;
+  for (const segment of wordmark) {
+    for (const char of segment.text) {
+      chars.push({ char, italic: segment.italic, color: segment.color, idx: globalIdx });
+      globalIdx++;
+    }
+  }
+
+  return (
+    <span
+      className="inline-flex items-end flex-wrap"
+      style={{ fontFamily: "inherit" }}
+    >
+      {chars.map(({ char, italic, color, idx }) => {
+        const isSpace = char === " ";
+        const isHovered = hoveredIdx === idx;
+
+        return (
+          <motion.span
+            key={idx}
+            onMouseEnter={() => !isSpace && setHoveredIdx(idx)}
+            onMouseLeave={() => setHoveredIdx(null)}
+            animate={{
+              y: isHovered ? -14 : 0,
+              color: isHovered
+                ? (color === "#800020" ? "#ff4566" : "#800020")
+                : color,
+              scaleY: isHovered ? 1.12 : 1,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 600,
+              damping: 18,
+              mass: 0.6,
+            }}
+            style={{
+              display: "inline-block",
+              fontStyle: italic ? "italic" : "normal",
+              color: color,
+              width: isSpace ? "0.35em" : undefined,
+              cursor: isSpace ? "default" : "pointer",
+              transformOrigin: "bottom center",
+            }}
+          >
+            {isSpace ? "\u00A0" : char}
+          </motion.span>
+        );
+      })}
+    </span>
+  );
+};
+
 export const Footer: React.FC = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -178,18 +243,18 @@ export const Footer: React.FC = () => {
             {/* Small red/accent dot above first letter 'O' */}
             <div className="absolute left-[3px] top-3.5 md:top-4 w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-[#ba1a1a]" />
 
-             <motion.h2
+                         <motion.h2
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="font-heading font-extrabold uppercase text-primary leading-none w-full whitespace-nowrap"
+              className="font-heading font-black uppercase text-primary leading-none w-full whitespace-nowrap"
               style={{
                 fontSize: "clamp(2rem, 8.8vw, 7.8rem)",
                 letterSpacing: "-0.04em",
               }}
             >
-              Oxivos Fashion
+              <AnimatedWordmark />
             </motion.h2>
           </div>
         </div>
