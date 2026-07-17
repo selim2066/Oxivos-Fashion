@@ -2,9 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ProductCard } from "@/components/ui/ProductCard";
 import { products } from "@/lib/products";
+import { FeaturedCollection } from "@/components/ui/FeaturedCollection";
 
 export default function Home() {
   // Get first 3 products for featured new arrivals
@@ -63,89 +63,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Product Categories */}
-      <section className="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
-        <div className="flex justify-between items-end mb-unit-xl">
-          <div>
-            <span className="text-label-sm font-bold uppercase tracking-widest text-secondary block mb-1">
-              Collections
-            </span>
-            <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase">
-              Product Category
-            </h2>
-            <p className="font-body-md text-on-surface-variant mt-2">
-              Designed for every journey — urban transit to alpine heights.
-            </p>
-          </div>
-          {/* Scroll Indicators */}
-          <div className="hidden md:flex gap-2">
-            <Link
-              href="/products"
-              className="w-12 h-12 border border-outline rounded-full flex items-center justify-center hover:bg-surface-variant transition-colors text-primary"
-              aria-label="Previous categories"
-            >
-              <ArrowLeft className="w-5 h-5" />
-            </Link>
-            <Link
-              href="/products"
-              className="w-12 h-12 border border-outline rounded-full flex items-center justify-center hover:bg-surface-variant transition-colors text-primary"
-              aria-label="Next categories"
-            >
-              <ArrowRight className="w-5 h-5" />
-            </Link>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-          {/* Man Category Card */}
-          <Link
-            href="/products?category=Men"
-            className="relative group cursor-pointer overflow-hidden rounded-lg bg-card-bg aspect-[3/4] shadow-sm hover:shadow-md transition-shadow"
-          >
-            <div className="absolute top-4 right-4 z-10 bg-primary text-on-primary font-label-sm px-4 py-1.5 rounded-full uppercase tracking-wider font-semibold">
-              Man
-            </div>
-            <img
-              className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-              src="/assets/men-collection.png"
-              alt="High-fashion studio shot of a male model in a white jacket."
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-          </Link>
-
-          {/* Woman Category Card */}
-          <Link
-            href="/products?category=Women"
-            className="relative group cursor-pointer overflow-hidden rounded-lg bg-card-bg aspect-[3/4] shadow-sm hover:shadow-md transition-shadow"
-          >
-            <div className="absolute top-4 right-4 z-10 bg-primary text-on-primary font-label-sm px-4 py-1.5 rounded-full uppercase tracking-wider font-semibold">
-              Woman
-            </div>
-            <img
-              className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-              src="/assets/women-collection.png"
-              alt="High-fashion studio shot of a female model in a blue blazer."
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-          </Link>
-
-          {/* Kid Category Card */}
-          <Link
-            href="/products?category=Kids"
-            className="relative group cursor-pointer overflow-hidden rounded-lg bg-card-bg aspect-[3/4] shadow-sm hover:shadow-md transition-shadow"
-          >
-            <div className="absolute top-4 right-4 z-10 bg-primary text-on-primary font-label-sm px-4 py-1.5 rounded-full uppercase tracking-wider font-semibold">
-              Kid
-            </div>
-            <img
-              className="w-full h-full object-cover object-center group-hover:scale-[1.03] transition-transform duration-700 ease-out"
-              src="/assets/kids-collection.png"
-              alt="Studio fashion shot of a child wearing a stylish denim jacket."
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-          </Link>
-        </div>
-      </section>
+      {/* Featured Collection Section */}
+      <FeaturedCollection />
 
       {/* Best Sellers Section */}
       <section className="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-t border-outline-variant/30">
