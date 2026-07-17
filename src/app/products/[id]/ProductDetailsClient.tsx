@@ -6,6 +6,7 @@ import { ChevronRight, Heart, ShoppingBag, Plus, Minus } from "lucide-react";
 import { Product } from "@/lib/types";
 import { useCart } from "@/context/CartContext";
 import { useWishlist } from "@/context/WishlistContext";
+import { Button } from "@/components/ui/button";
 
 interface ProductDetailsClientProps {
   product: Product;
@@ -216,35 +217,37 @@ export const ProductDetailsClient: React.FC<ProductDetailsClientProps> = ({ prod
                 </div>
 
                 {/* Add to Bag Button */}
-                <button
+                <Button
                   onClick={handleAddToCart}
-                  className="flex-grow py-4 bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider rounded hover:opacity-90 transition-opacity shadow-elevate flex justify-center items-center gap-2"
+                  variant={addedNotification ? "secondary" : "default"}
+                  size="lg"
+                  className="flex-grow flex justify-center items-center gap-2 shadow-elevate"
                 >
-                  <ShoppingBag className="w-5 h-5" />
+                  <ShoppingBag className="w-5 h-5 text-current" />
                   <span>{addedNotification ? "Added to Bag" : "Add to Bag"}</span>
-                </button>
+                </Button>
               </div>
             ) : (
-              <button
+              <Button
                 disabled
-                className="w-full py-4 bg-outline text-on-primary font-label-md text-label-md uppercase tracking-wider rounded cursor-not-allowed flex justify-center items-center"
+                variant="outline"
+                size="lg"
+                className="w-full cursor-not-allowed flex justify-center items-center opacity-50"
               >
                 Sold Out
-              </button>
+              </Button>
             )}
 
             {/* Wishlist Button */}
-            <button
+            <Button
               onClick={() => toggleWishlist(product)}
-              className={`w-full py-4 bg-transparent border rounded font-label-md text-label-md uppercase tracking-wider transition-all flex justify-center items-center gap-2 ${
-                isFavorite
-                  ? "border-primary bg-primary text-on-primary"
-                  : "border-primary text-primary hover:bg-surface-container-low"
-              }`}
+              variant={isFavorite ? "default" : "outline"}
+              size="lg"
+              className="w-full flex justify-center items-center gap-2"
             >
-              <Heart className={`w-5 h-5 ${isFavorite ? "fill-current" : ""}`} />
+              <Heart className={`w-5 h-5 text-current ${isFavorite ? "fill-current" : ""}`} />
               <span>{isFavorite ? "Saved to Wishlist" : "Save to Wishlist"}</span>
-            </button>
+            </Button>
           </div>
 
           {/* Accordion Specs Sheets */}

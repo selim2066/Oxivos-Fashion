@@ -7,6 +7,7 @@ import { Heart, ShoppingBag, X } from "lucide-react";
 import { Product } from "../../lib/types";
 import { useCart } from "../../context/CartContext";
 import { useWishlist } from "../../context/WishlistContext";
+import { Button } from "./button";
 
 interface ProductCardProps {
   product: Product;
@@ -94,12 +95,14 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           {/* Quick View slide-up overlay */}
           {product.inStock && (
             <div className="absolute bottom-0 left-0 w-full p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-20">
-              <button
+              <Button
                 onClick={() => setIsQuickViewOpen(true)}
-                className="w-full bg-primary/90 backdrop-blur text-on-primary font-label-sm py-3 rounded-DEFAULT hover:bg-primary transition-colors uppercase tracking-wider text-xs font-semibold shadow-sm"
+                variant="glass"
+                size="sm"
+                className="w-full shadow-sm text-xs"
               >
                 Quick View
-              </button>
+              </Button>
             </div>
           )}
         </div>
@@ -117,20 +120,16 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
           {/* Add to Cart Button */}
           {showAddToCart && (
-            <button
+            <Button
               onClick={handleAddToCartDirect}
               disabled={!product.inStock}
-              className={`w-full mt-3 py-2.5 px-4 font-label-sm text-label-sm uppercase tracking-wider rounded-DEFAULT transition-all duration-300 flex justify-center items-center gap-2 shadow-sm ${
-                !product.inStock
-                  ? "bg-outline-variant/30 text-on-surface-variant/50 cursor-not-allowed border border-outline-variant/20"
-                  : addedNotification
-                  ? "bg-secondary text-on-secondary hover:bg-secondary/90"
-                  : "bg-primary text-on-primary hover:bg-primary/90"
-              }`}
+              variant={!product.inStock ? "outline" : addedNotification ? "secondary" : "default"}
+              size="sm"
+              className="w-full mt-3 flex items-center justify-center gap-2 shadow-sm text-xs"
             >
-              <ShoppingBag className="w-3.5 h-3.5" />
+              <ShoppingBag className="w-3.5 h-3.5 text-current" />
               <span>{addedNotification ? "Added" : "Add to Bag"}</span>
-            </button>
+            </Button>
           )}
         </div>
       </div>
@@ -266,34 +265,36 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                       </button>
                     </div>
 
-                    <button
+                    <Button
                       onClick={handleAddToCart}
-                      className="flex-grow py-3 bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider rounded hover:opacity-90 transition-opacity shadow-elevate flex justify-center items-center gap-2"
+                      variant={addedNotification ? "secondary" : "default"}
+                      size="default"
+                      className="flex-grow flex justify-center items-center gap-2 shadow-elevate"
                     >
-                      <ShoppingBag className="w-4 h-4" />
+                      <ShoppingBag className="w-4 h-4 text-current" />
                       <span>{addedNotification ? "Added" : "Add to Bag"}</span>
-                    </button>
+                    </Button>
                   </div>
                 ) : (
-                  <button
+                  <Button
                     disabled
-                    className="w-full py-3 bg-outline text-on-primary font-label-md text-label-md uppercase tracking-wider rounded cursor-not-allowed flex justify-center items-center"
+                    variant="outline"
+                    size="default"
+                    className="w-full cursor-not-allowed flex justify-center items-center opacity-50"
                   >
                     Out of Stock
-                  </button>
+                  </Button>
                 )}
 
-                <button
+                <Button
                   onClick={() => toggleWishlist(product)}
-                  className={`w-full py-2 border rounded font-label-sm text-label-sm uppercase tracking-wider transition-colors flex justify-center items-center gap-2 ${
-                    isFavorite
-                      ? "border-primary bg-primary text-on-primary"
-                      : "border-outline-variant text-primary hover:bg-surface-container-low"
-                  }`}
+                  variant={isFavorite ? "default" : "outline"}
+                  size="default"
+                  className="w-full flex justify-center items-center gap-2"
                 >
-                  <Heart className={`w-4 h-4 ${isFavorite ? "fill-current" : ""}`} />
+                  <Heart className={`w-4 h-4 text-current ${isFavorite ? "fill-current" : ""}`} />
                   <span>{isFavorite ? "In Wishlist" : "Save to Wishlist"}</span>
-                </button>
+                </Button>
 
                 <Link
                   href={`/products/${product.id}`}
