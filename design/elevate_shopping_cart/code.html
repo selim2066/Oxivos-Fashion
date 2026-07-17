@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ELEVATE - Shopping Cart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary-fixed-dim": "#c9c6c5",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#abcbdf",
+                    "on-tertiary-fixed": "#191c1e",
+                    "on-tertiary-fixed-variant": "#44474a",
+                    "on-secondary-fixed-variant": "#2b4a5b",
+                    "on-background": "#111c2d",
+                    "inverse-surface": "#273143",
+                    "surface-variant": "#d9e3fb",
+                    "on-tertiary-container": "#818487",
+                    "surface-container-low": "#f0f3ff",
+                    "surface-tint": "#5f5e5e",
+                    "outline": "#747878",
+                    "on-primary-fixed": "#1c1b1b",
+                    "surface-dim": "#d0daf2",
+                    "on-secondary-fixed": "#001e2c",
+                    "on-primary-container": "#858383",
+                    "on-error-container": "#93000a",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-highest": "#d9e3fb",
+                    "error-container": "#ffdad6",
+                    "on-error": "#ffffff",
+                    "tertiary-container": "#191c1e",
+                    "tertiary-fixed-dim": "#c4c7ca",
+                    "primary": "#000000",
+                    "tertiary-fixed": "#e0e3e6",
+                    "surface": "#f9f9ff",
+                    "secondary-container": "#c4e4f9",
+                    "on-secondary": "#ffffff",
+                    "background": "#f9f9ff",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#000000",
+                    "surface-bright": "#f9f9ff",
+                    "outline-variant": "#c4c7c7",
+                    "primary-container": "#1c1b1b",
+                    "surface-container-high": "#dfe8ff",
+                    "on-secondary-container": "#486778",
+                    "primary-fixed": "#e5e2e1",
+                    "inverse-on-surface": "#ecf0ff",
+                    "surface-container": "#e8eeff",
+                    "secondary-fixed": "#c7e7fc",
+                    "on-surface": "#111c2d",
+                    "on-surface-variant": "#444748",
+                    "inverse-primary": "#c9c6c5",
+                    "secondary": "#436274",
+                    "on-primary-fixed-variant": "#474646"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit-lg": "32px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px",
+                    "section-gap": "120px",
+                    "unit-xl": "64px",
+                    "unit-xs": "4px",
+                    "unit-md": "16px",
+                    "container-max": "1280px",
+                    "unit-sm": "8px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "headline-md": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "label-md": [
+                            "Inter"
+                    ],
+                    "headline-lg-mobile": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "headline-sm": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "label-sm": [
+                            "Inter"
+                    ],
+                    "display-xl-mobile": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "headline-lg": [
+                            "Plus Jakarta Sans"
+                    ],
+                    "display-xl": [
+                            "Plus Jakarta Sans"
+                    ]
+            },
+            "fontSize": {
+                    "headline-md": [
+                            "32px",
+                            {
+                                    "lineHeight": "40px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "32px",
+                            {
+                                    "lineHeight": "38px",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "label-sm": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "display-xl-mobile": [
+                            "48px",
+                            {
+                                    "lineHeight": "52px",
+                                    "fontWeight": "800"
+                            }
+                    ],
+                    "headline-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-xl": [
+                            "80px",
+                            {
+                                    "lineHeight": "90px",
+                                    "letterSpacing": "-0.04em",
+                                    "fontWeight": "800"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.surface-container-lowest');
+            color: theme('colors.on-surface');
+        }
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col pt-24">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl shadow-sm transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center w-full px-margin-desktop py-unit-sm max-w-container-max mx-auto">
+<div class="flex items-center gap-gutter hidden md:flex">
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors hover:opacity-70 transition-opacity duration-300 font-label-md text-label-md uppercase tracking-wider" href="#">New Arrivals</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors hover:opacity-70 transition-opacity duration-300 font-label-md text-label-md uppercase tracking-wider" href="#">Men</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors hover:opacity-70 transition-opacity duration-300 font-label-md text-label-md uppercase tracking-wider" href="#">Women</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors hover:opacity-70 transition-opacity duration-300 font-label-md text-label-md uppercase tracking-wider" href="#">Collections</a>
+<a class="text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors hover:opacity-70 transition-opacity duration-300 font-label-md text-label-md uppercase tracking-wider" href="#">Journal</a>
+</div>
+<a class="font-display-xl-mobile text-headline-sm font-extrabold tracking-tighter text-primary dark:text-inverse-primary" href="#">ELEVATE</a>
+<div class="flex items-center gap-unit-md text-primary dark:text-inverse-primary">
+<button class="hover:opacity-70 transition-opacity duration-300"><span class="material-symbols-outlined" data-icon="search">search</span></button>
+<button class="hover:opacity-70 transition-opacity duration-300"><span class="material-symbols-outlined" data-icon="person">person</span></button>
+<button class="hover:opacity-70 transition-opacity duration-300 relative">
+<span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+<span class="absolute -top-1 -right-1 bg-primary text-on-primary text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow max-w-container-max mx-auto w-full px-margin-mobile md:px-margin-desktop py-unit-xl">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg mb-unit-lg text-primary">Your Cart</h1>
+<div class="flex flex-col lg:flex-row gap-gutter lg:gap-section-gap">
+<!-- Cart Items List (Left Column) -->
+<div class="flex-grow flex flex-col gap-unit-lg">
+<!-- Item 1 -->
+<div class="flex gap-unit-lg py-unit-lg border-b border-outline-variant">
+<div class="w-32 h-40 bg-[#F2F4F7] rounded overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A minimalist, high-end studio shot of a technical outerwear jacket in a crisp, clean white color. The jacket is displayed flat against a seamless light grey background. Soft, diffused lighting highlights the premium fabric texture and modern tailoring. The aesthetic is clean, corporate-modern, and aspirational, fitting for a quiet luxury outdoor lifestyle brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVgSWYQaoE1RnEo57_Nlg8XdlJXf54KbM4YUOZG8ytkzi7m52mkGKr1q1tOtgqcNMfOJPNvOMzd0zKDo4NiwuSKgbv5wOZ6SiLedQ39Gt4cApGA7eOqAaxafEW7fIiM-1EtyheN2sp6yYNxsp58SfaTFMC3y1MHhQ0MaXFgOzeZsZdCZHn4sL6MHm9QVf2iGp31dNulpynU-sYUpiBXMGBwDA5pVL_DTVtq_LgwQPFA7SdQ95jO9FM"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start mb-unit-xs">
+<h3 class="font-headline-sm text-headline-sm text-primary">Alpine Air Jacket</h3>
+<span class="font-body-lg text-body-lg text-primary">$245.00</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Color: Cloud White</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Size: M</p>
+</div>
+<div class="flex justify-between items-end">
+<div class="flex items-center border border-outline-variant rounded">
+<button class="px-3 py-1 text-primary hover:bg-[#F2F4F7] transition-colors">-</button>
+<span class="px-3 py-1 font-body-md text-body-md border-x border-outline-variant">1</span>
+<button class="px-3 py-1 text-primary hover:bg-[#F2F4F7] transition-colors">+</button>
+</div>
+<button class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors underline underline-offset-4">Remove</button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-unit-lg py-unit-lg border-b border-outline-variant">
+<div class="w-32 h-40 bg-[#F2F4F7] rounded overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A sleek, high-end studio product shot of modern outdoor hiking pants in a deep charcoal grey. The pants are laid out precisely on a soft white background. The lighting is bright and even, emphasizing the technical fabric and minimalist seams. The overall mood is premium, organized, and technical, reflecting a corporate-modern outdoor aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuZQYMCCWC7ivnqGAtx-b-0FiQrMUb8LJanBCP5pRx4sHQN4c2iIxxyJz_Xu1MsxzV29N09vN-RQjtthaumGahzhE9B0aSaz-16IaqFz5EgUHdCJCx-NTkWk6Zgu3JsY-c4IExD5XHukYPSIs69d9bzHnyML04-flZqka0MvY0E143JkzzDOu1VHOHfZrhec1ScpLPGygtK6UySUER8J4wLHtqnfUfPytSwp2KDJrc4P2wWG60122M"/>
+</div>
+<div class="flex flex-col justify-between flex-grow">
+<div>
+<div class="flex justify-between items-start mb-unit-xs">
+<h3 class="font-headline-sm text-headline-sm text-primary">Meridian Trek Pants</h3>
+<span class="font-body-lg text-body-lg text-primary">$180.00</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Color: Obsidian</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Size: 32</p>
+</div>
+<div class="flex justify-between items-end">
+<div class="flex items-center border border-outline-variant rounded">
+<button class="px-3 py-1 text-primary hover:bg-[#F2F4F7] transition-colors">-</button>
+<span class="px-3 py-1 font-body-md text-body-md border-x border-outline-variant">1</span>
+<button class="px-3 py-1 text-primary hover:bg-[#F2F4F7] transition-colors">+</button>
+</div>
+<button class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors underline underline-offset-4">Remove</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Order Summary (Right Column) -->
+<div class="w-full lg:w-[400px] flex-shrink-0">
+<div class="bg-[#F2F4F7] p-unit-lg rounded">
+<h2 class="font-headline-md text-headline-md text-primary mb-unit-lg">Order Summary</h2>
+<div class="flex flex-col gap-unit-sm mb-unit-lg border-b border-outline-variant pb-unit-md">
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span>Subtotal</span>
+<span>$425.00</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span>Shipping</span>
+<span>Calculated at checkout</span>
+</div>
+<div class="flex justify-between font-body-md text-body-md text-on-surface-variant">
+<span>Tax</span>
+<span>$0.00</span>
+</div>
+</div>
+<div class="flex justify-between font-headline-sm text-headline-sm text-primary mb-unit-lg">
+<span>Total</span>
+<span>$425.00</span>
+</div>
+<button class="w-full bg-primary text-on-primary py-4 rounded font-label-md text-label-md uppercase tracking-wider hover:bg-on-surface transition-colors shadow-[0px_4px_20px_rgba(0,0,0,0.04)]">Proceed to Checkout</button>
+</div>
+</div>
+</div>
+<!-- Upsell Section -->
+<div class="mt-section-gap">
+<h2 class="font-headline-md text-headline-md text-primary mb-unit-lg">You May Also Like</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Upsell 1 -->
+<div class="group cursor-pointer">
+<div class="w-full aspect-[3/4] bg-[#F2F4F7] rounded mb-unit-sm overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A minimalist, high-end studio shot of a technical performance t-shirt in a soft sky blue. The shirt is perfectly folded against a pristine white background. Bright, high-key lighting creates a sense of airy lightness. The aesthetic is clean, modern, and aligned with a premium outdoor lifestyle brand." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNlJAiyS35xo11a97Hm__ZikSH14iXdUeM_-OfE-2k1tcC9Z9n51M72rJii6V8Mqj0yjY5EWVJsZkGtvKUUfl2zLC6ZlPVXlt8jg6a6uoEITxsmYoKvGd8QMD_6EyDj5yMcOa452yzjNlPSjKmYynBoQiGIkxax_gHADicv7yEevAnN-lQXNmDtRM9OvXcvq1Hevc2Y6qpskIr9qL10k5fvFq8ikrvQ7S_J1jYVmA_nScQHbMA2JIj"/>
+<div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="bg-primary text-on-primary px-4 py-2 rounded font-label-sm text-label-sm uppercase tracking-wider">Quick View</span>
+</div>
+</div>
+<h4 class="font-label-md text-label-md text-primary">Aero Tech Tee</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">$65.00</p>
+</div>
+<!-- Upsell 2 -->
+<div class="group cursor-pointer">
+<div class="w-full aspect-[3/4] bg-[#F2F4F7] rounded mb-unit-sm overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A sleek, high-end studio shot of a minimalist hydration water bottle in matte black steel. The bottle stands upright on a stark white surface with subtle reflections. The lighting is crisp and corporate-modern, emphasizing the product's clean lines and premium finish. The mood is highly organized and aspirational." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuApIU5ZLBt2N7hAvpcU1Qfp-bzmBqEOq6QnSsC1LM09Qx3iJPT8udkLSI5s9dVq2s7O6ENPA4B8Y44cqZi7bnMa8NeAUZ-tfi3C5N-oD1lMVJRHAchie05bH_qJjMgcJxgyrXfsx5UlPv1IAwvR5Hn1IsUyM9ForlJjjZ4e_HMQHgSxDM_UFhG8JmxGwgrHbWzRULIjTgmqy3l-i48XxuLpn8hgrUVHBjL6WTmblEBxLumcJSOfAn"/>
+<div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="bg-primary text-on-primary px-4 py-2 rounded font-label-sm text-label-sm uppercase tracking-wider">Quick View</span>
+</div>
+</div>
+<h4 class="font-label-md text-label-md text-primary">Hydro Flask Pro</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">$45.00</p>
+</div>
+<!-- Upsell 3 -->
+<div class="group cursor-pointer hidden md:block">
+<div class="w-full aspect-[3/4] bg-[#F2F4F7] rounded mb-unit-sm overflow-hidden relative">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A minimalist, high-end studio shot of a lightweight, technical running cap in a muted stone color. The cap is displayed against a bright white background. Soft, even lighting highlights the breathable fabric texture. The aesthetic is crisp, premium, and geared towards quiet luxury in the outdoor space." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiT8WN-HwgOeawpyEQ8bCzOJwYDFFuVOJoE6KnRVhFnorG_yr2Lq6NK7T5c7JI4JEjAarGjC8Na1v1eZKkaKEL35kVgQK8F11znxEaY-u1h6CgHwGdtVHJsTw47v9yne0ZadgCqlgBTrB9c5Vvv5j3TfF_XMNKpHOPPz7ySqiL_VyA6s1FuuKUIbZRUTjDEdS61i8ZKkRu251UhnL26CrRRtAbAOhd7SEyLX9OCuQENaYEmLezsdE5"/>
+<div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+<span class="bg-primary text-on-primary px-4 py-2 rounded font-label-sm text-label-sm uppercase tracking-wider">Quick View</span>
+</div>
+</div>
+<h4 class="font-label-md text-label-md text-primary">Summit Trail Cap</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">$38.00</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-outline-variant dark:border-outline bg-surface-container-lowest dark:bg-surface-dim mt-auto transition-all duration-200">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-section-gap max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-2">
+<span class="font-display-xl-mobile text-headline-md font-black tracking-tighter text-primary dark:text-inverse-primary block mb-unit-lg">ELEVATE</span>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Premium technical apparel designed for the intersection of high fashion and the natural world.</p>
+</div>
+<div class="flex flex-col gap-unit-md">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline hover:underline decoration-1 underline-offset-4 transition-all" href="#">Shop</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline hover:underline decoration-1 underline-offset-4 transition-all" href="#">Support</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline hover:underline decoration-1 underline-offset-4 transition-all" href="#">Company</a>
+</div>
+<div class="flex flex-col gap-unit-md">
+<h4 class="font-label-md text-label-md text-primary dark:text-inverse-primary">Newsletter</h4>
+<div class="flex border-b border-outline-variant pb-2 focus-within:border-primary transition-colors">
+<input class="bg-transparent border-none outline-none flex-grow font-body-md text-body-md p-0 focus:ring-0" placeholder="Email Address" type="email"/>
+<button class="text-primary hover:opacity-70 transition-opacity"><span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span></button>
+</div>
+</div>
+<div class="col-span-1 md:col-span-4 mt-unit-xl border-t border-outline-variant pt-unit-lg">
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-outline">© 2024 ELEVATE. ALL RIGHTS RESERVED.</p>
+</div>
+</div>
+</footer>
+</body></html>

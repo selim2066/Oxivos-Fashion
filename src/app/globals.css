@@ -1,0 +1,262 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ================================================================
+   OXIVOS FASHION DESIGN SYSTEM — Design Tokens (source: DESIGN.md)
+   ================================================================
+   All colors, typography, spacing, and radii below are the single
+   source of truth. Do NOT add ad-hoc values outside this block.
+   ================================================================ */
+
+@theme inline {
+  /* ── Fonts ───────────────────────────────────────────────────── */
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-plus-jakarta-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* ── Elevate Brand Colors ────────────────────────────────────── */
+  --color-surface: #f9f9ff;
+  --color-surface-dim: #d0daf2;
+  --color-surface-bright: #f9f9ff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f0f3ff;
+  --color-surface-container: #e8eeff;
+  --color-surface-container-high: #dfe8ff;
+  --color-surface-container-highest: #d9e3fb;
+  --color-on-surface: #111c2d;
+  --color-on-surface-variant: #444748;
+  --color-inverse-surface: #273143;
+  --color-inverse-on-surface: #ecf0ff;
+  --color-outline: #747878;
+  --color-outline-variant: #c4c7c7;
+  --color-surface-tint: #5f5e5e;
+  --color-surface-variant: #d9e3fb;
+
+  --color-elevate-primary: #000000;
+  --color-on-elevate-primary: #ffffff;
+  --color-primary-container: #1c1b1b;
+  --color-on-primary-container: #858383;
+  --color-inverse-primary: #c9c6c5;
+
+  --color-secondary: #436274;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #c4e4f9;
+  --color-on-secondary-container: #486778;
+
+  --color-elevate-tertiary: #000000;
+  --color-on-elevate-tertiary: #ffffff;
+  --color-tertiary-container: #191c1e;
+  --color-on-tertiary-container: #818487;
+
+  --color-elevate-error: #ba1a1a;
+  --color-on-elevate-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  --color-primary-fixed: #e5e2e1;
+  --color-primary-fixed-dim: #c9c6c5;
+  --color-on-primary-fixed: #1c1b1b;
+  --color-on-primary-fixed-variant: #474646;
+
+  --color-secondary-fixed: #c7e7fc;
+  --color-secondary-fixed-dim: #abcbdf;
+  --color-on-secondary-fixed: #001e2c;
+  --color-on-secondary-fixed-variant: #2b4a5b;
+
+  --color-tertiary-fixed: #e0e3e6;
+  --color-tertiary-fixed-dim: #c4c7ca;
+  --color-on-tertiary-fixed: #191c1e;
+  --color-on-tertiary-fixed-variant: #44474a;
+
+  --color-elevate-background: #f9f9ff;
+  --color-on-background: #111c2d;
+
+  /* Functional alias used by reference designs for card backgrounds */
+  --color-card-bg: #f2f4f7;
+
+  /* ── shadcn/ui compatibility overrides (mapped to Elevate tokens) ── */
+  --color-background: var(--color-elevate-background);
+  --color-foreground: var(--color-on-surface);
+  --color-card: var(--color-surface-container-lowest);
+  --color-card-foreground: var(--color-on-surface);
+  --color-popover: var(--color-surface-container-lowest);
+  --color-popover-foreground: var(--color-on-surface);
+  --color-primary: var(--color-elevate-primary);
+  --color-primary-foreground: var(--color-on-elevate-primary);
+  --color-secondary: var(--color-secondary);
+  --color-secondary-foreground: var(--color-on-secondary);
+  --color-muted: var(--color-surface-container-low);
+  --color-muted-foreground: var(--color-on-surface-variant);
+  --color-accent: var(--color-surface-container);
+  --color-accent-foreground: var(--color-on-surface);
+  --color-destructive: var(--color-elevate-error);
+  --color-border: var(--color-outline-variant);
+  --color-input: var(--color-outline-variant);
+  --color-ring: var(--color-outline);
+
+  /* ── Spacing (from DESIGN.md) ────────────────────────────────── */
+  --spacing-unit-xs: 4px;
+  --spacing-unit-sm: 8px;
+  --spacing-unit-md: 16px;
+  --spacing-gutter: 24px;
+  --spacing-unit-lg: 32px;
+  --spacing-unit-xl: 64px;
+  --spacing-margin-mobile: 20px;
+  --spacing-margin-desktop: 64px;
+  --spacing-section-gap: 120px;
+  --spacing-container-max: 1280px;
+
+  /* ── Border Radius (from DESIGN.md) ──────────────────────────── */
+  --radius-sm: 0.125rem;     /* 2px  */
+  --radius-DEFAULT: 0.25rem; /* 4px — the brand standard */
+  --radius-md: 0.375rem;     /* 6px  */
+  --radius-lg: 0.5rem;       /* 8px  */
+  --radius-xl: 0.75rem;      /* 12px */
+  --radius-full: 9999px;
+
+  /* ── Typography Scale (fontSize utilities) ───────────────────── */
+  --font-size-display-xl: 80px;
+  --font-size-display-xl--line-height: 90px;
+  --font-size-display-xl--letter-spacing: -0.04em;
+  --font-size-display-xl--font-weight: 800;
+
+  --font-size-display-xl-mobile: 48px;
+  --font-size-display-xl-mobile--line-height: 52px;
+  --font-size-display-xl-mobile--font-weight: 800;
+
+  --font-size-headline-lg: 48px;
+  --font-size-headline-lg--line-height: 56px;
+  --font-size-headline-lg--letter-spacing: -0.02em;
+  --font-size-headline-lg--font-weight: 700;
+
+  --font-size-headline-lg-mobile: 32px;
+  --font-size-headline-lg-mobile--line-height: 38px;
+  --font-size-headline-lg-mobile--font-weight: 700;
+
+  --font-size-headline-md: 32px;
+  --font-size-headline-md--line-height: 40px;
+  --font-size-headline-md--font-weight: 700;
+
+  --font-size-headline-sm: 24px;
+  --font-size-headline-sm--line-height: 32px;
+  --font-size-headline-sm--font-weight: 600;
+
+  --font-size-body-lg: 18px;
+  --font-size-body-lg--line-height: 28px;
+  --font-size-body-lg--font-weight: 400;
+
+  --font-size-body-md: 16px;
+  --font-size-body-md--line-height: 24px;
+  --font-size-body-md--font-weight: 400;
+
+  --font-size-label-md: 14px;
+  --font-size-label-md--line-height: 20px;
+  --font-size-label-md--letter-spacing: 0.05em;
+  --font-size-label-md--font-weight: 600;
+
+  --font-size-label-sm: 12px;
+  --font-size-label-sm--line-height: 16px;
+  --font-size-label-sm--font-weight: 500;
+}
+
+/* ── Elevate Typography Utility Classes ───────────────────────── */
+/* These match the naming convention from DESIGN.md and the       */
+/* reference HTML screens (e.g. `font-display-xl text-display-xl`)*/
+
+@utility text-display-xl {
+  font-family: var(--font-heading);
+  font-size: 80px;
+  line-height: 90px;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+}
+
+@utility text-display-xl-mobile {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  line-height: 52px;
+  font-weight: 800;
+}
+
+@utility text-headline-lg {
+  font-family: var(--font-heading);
+  font-size: 48px;
+  line-height: 56px;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+
+@utility text-headline-lg-mobile {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  line-height: 38px;
+  font-weight: 700;
+}
+
+@utility text-headline-md {
+  font-family: var(--font-heading);
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 700;
+}
+
+@utility text-headline-sm {
+  font-family: var(--font-heading);
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+}
+
+@utility text-body-lg {
+  font-family: var(--font-sans);
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+@utility text-body-md {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+@utility text-label-md {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+@utility text-label-sm {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+/* ── Elevate Shadow (from DESIGN.md — ambient depth) ──────────── */
+@utility shadow-elevate {
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+@utility shadow-elevate-glass {
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Base Styles ─────────────────────────────────────────────── */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-elevate-background text-on-surface font-sans antialiased;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+}

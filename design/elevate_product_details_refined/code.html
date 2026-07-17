@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Alpine Air Jacket | ELEVATE</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config from Brand Anchors -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#474646",
+                    "secondary-fixed": "#c7e7fc",
+                    "on-tertiary-fixed": "#191c1e",
+                    "tertiary-container": "#191c1e",
+                    "outline": "#747878",
+                    "outline-variant": "#c4c7c7",
+                    "surface-container-high": "#dfe8ff",
+                    "primary": "#000000",
+                    "inverse-on-surface": "#ecf0ff",
+                    "surface-tint": "#5f5e5e",
+                    "primary-fixed": "#e5e2e1",
+                    "on-tertiary-container": "#818487",
+                    "primary-fixed-dim": "#c9c6c5",
+                    "surface-bright": "#f9f9ff",
+                    "on-surface": "#111c2d",
+                    "on-secondary": "#ffffff",
+                    "surface": "#f9f9ff",
+                    "tertiary-fixed": "#e0e3e6",
+                    "inverse-surface": "#273143",
+                    "on-primary-fixed": "#1c1b1b",
+                    "inverse-primary": "#c9c6c5",
+                    "surface-container-highest": "#d9e3fb",
+                    "surface-container": "#e8eeff",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#d0daf2",
+                    "surface-container-low": "#f0f3ff",
+                    "background": "#f9f9ff",
+                    "primary-container": "#1c1b1b",
+                    "on-primary-container": "#858383",
+                    "secondary-fixed-dim": "#abcbdf",
+                    "secondary": "#436274",
+                    "on-surface-variant": "#444748",
+                    "on-primary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#44474a",
+                    "error-container": "#ffdad6",
+                    "secondary-container": "#c4e4f9",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#d9e3fb",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#000000",
+                    "on-secondary-fixed": "#001e2c",
+                    "on-secondary-container": "#486778",
+                    "on-background": "#111c2d",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#c4c7ca",
+                    "on-secondary-fixed-variant": "#2b4a5b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-gap": "120px",
+                    "gutter": "24px",
+                    "unit-sm": "8px",
+                    "margin-desktop": "64px",
+                    "unit-lg": "32px",
+                    "unit-xl": "64px",
+                    "unit-md": "16px",
+                    "container-max": "1280px",
+                    "unit-xs": "4px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"],
+                    "display-xl-mobile": ["Plus Jakarta Sans"],
+                    "label-md": ["Inter"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-sm": ["Plus Jakarta Sans"],
+                    "display-xl": ["Plus Jakarta Sans"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+                    "headline-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "display-xl-mobile": ["48px", {"lineHeight": "52px", "fontWeight": "800"}],
+                    "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["32px", {"lineHeight": "38px", "fontWeight": "700"}],
+                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "display-xl": ["80px", {"lineHeight": "90px", "letterSpacing": "-0.04em", "fontWeight": "800"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        /* Smooth scrolling and base resets */
+        html { scroll-behavior: smooth; }
+        body { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        
+        /* Hide scrollbar for gallery thumbnails but allow scroll */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen pt-[100px]">
+<!-- TopNavBar Shared Component -->
+<nav class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-surface-container-highest/80 backdrop-blur-xl shadow-sm transition-all duration-300 ease-in-out">
+<div class="flex justify-between items-center w-full px-margin-desktop py-unit-sm max-w-container-max mx-auto md:px-margin-mobile">
+<!-- Brand -->
+<a class="font-display-xl-mobile text-headline-sm font-extrabold tracking-tighter text-primary dark:text-inverse-primary hover:opacity-70 transition-opacity duration-300" href="#">
+                ELEVATE
+            </a>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex items-center gap-gutter">
+<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors hover:opacity-70 duration-300" href="#">New Arrivals</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors hover:opacity-70 duration-300" href="#">Men</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors hover:opacity-70 duration-300" href="#">Women</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors hover:opacity-70 duration-300" href="#">Collections</a>
+<a class="font-label-md text-label-md uppercase tracking-wider text-on-surface-variant dark:text-outline hover:text-primary dark:hover:text-inverse-primary transition-colors hover:opacity-70 duration-300" href="#">Journal</a>
+</div>
+<!-- Trailing Icons -->
+<div class="flex items-center gap-unit-md text-primary dark:text-inverse-primary">
+<button class="hover:opacity-70 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined">search</span>
+</button>
+<button class="hover:opacity-70 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined">person</span>
+</button>
+<button class="hover:opacity-70 transition-opacity duration-300 flex items-center justify-center">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Product Section -->
+<main class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop py-section-gap">
+<!-- Breadcrumbs (Minimalist) -->
+<div class="mb-unit-lg flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">
+<a class="hover:text-primary transition-colors" href="#">Home</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Men</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<a class="hover:text-primary transition-colors" href="#">Outerwear</a>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+<span class="text-primary font-semibold">Alpine Air Jacket</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-unit-xl">
+<!-- Left: Image Gallery (8 cols) -->
+<div class="lg:col-span-7 flex flex-col gap-unit-md">
+<!-- Main Image -->
+<div class="w-full aspect-[4/5] bg-tertiary-fixed rounded overflow-hidden relative group">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="A high-fashion editorial photograph of the Alpine Air Jacket in Cloud White. The jacket is displayed on a minimalist, invisible mannequin against a vast, serene landscape featuring open sky and distant craggy mountains. The lighting is crisp, natural, and highly diffused, emphasizing the technical precision, matte finish, and articulated sleeves of the garment. The overall aesthetic is clean, light-mode, and modern, blending functional outdoor gear with high-end, quiet luxury editorial styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQSAhEKKdYNlDwHQelmW5ldQB4b3AxGnqvzaKB8TuIOWTjECgfkx9nhTzFCE_n_-NyjJ2W0bAEsfKEVmEyPs2t3GS7Fhg5l61rH5xNXROQLpn9pFL36RtV1Da4SEyqbOhBJQPeIAYn41fLcHU812o1hPD7yGP3mVPLyEDXLPJ85EIc2AWlb0bYODPh2c-wpXxLTdAZ1jPT89K9kNbTl2xKzrJmhlZYLzz85rma30vkd4zA0cQUHutB"/>
+</div>
+<!-- Thumbnails -->
+<div class="flex gap-unit-md overflow-x-auto hide-scrollbar pb-2">
+<button class="w-[120px] aspect-[4/5] bg-tertiary-fixed rounded overflow-hidden flex-shrink-0 border-2 border-primary focus:outline-none">
+<img class="w-full h-full object-cover" data-alt="A close-up, high-fidelity macro shot of the Alpine Air Jacket in Cloud White, focusing specifically on the highly technical, water-resistant zipper hardware and the fine weave of the wind-resistant outer shell. The lighting highlights the subtle texture of the fabric and the matte finish of the metal pull tab. The mood is precise, modern, and perfectly aligned with a minimalist, premium brand aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTd2pLTYVvrFjOweEYSM6PpzaPmreSTYOzVlIS2YtiEd26x_ro4RIn7YD9HEUOs2Avzkq6hvPM4P_kFgCeS5JWIPTqk8jJrLUPK9vY3iVpofG7ufEOQtB9-403fnBummvqgtoyGO84L5ius09Lw8EOM0C5XiM7OMQAGLr6dsIVF5P8oYksGEDl5llpO-g8vd7eapfG6uY5G7FC41QoT_tTtTq8OSk73Xdkprb_W8KJyMiSYWZUbEvI"/>
+</button>
+<button class="w-[120px] aspect-[4/5] bg-tertiary-fixed rounded overflow-hidden flex-shrink-0 border-2 border-transparent hover:border-outline-variant transition-colors focus:outline-none">
+<img class="w-full h-full object-cover" data-alt="A detailed editorial shot of the Alpine Air Jacket in Cloud White showing the articulated sleeve construction and the adjustable cuff detail. The arm is slightly bent to demonstrate the ergonomic design. Set against a pure, bright, light-mode background with soft ambient shadows to create depth without heavy contrast. The styling conveys technical performance fused with sophisticated, quiet luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpT3pgfsoPSsf7weR2GSmVJeI04aLoM4WloZu4tXBsGL_K5IuYz3jD_oc4WKMM32cM_HH4yBDH--L1ZCRX80sKS090BGOYZb3XrRiwOjG3VoDTdSbwxL5K1omlDNWAw8aBky2HTMoeu-JXYo9tbgnSppEdrbywE7KA9b30U644j83XLV4XpCKTZ-XG_jHb2N16H5odM6DosdoaBBA6szUYVdL4wrp2DI3YG9D1EKqzY6bcjkM_Bj4-"/>
+</button>
+<button class="w-[120px] aspect-[4/5] bg-tertiary-fixed rounded overflow-hidden flex-shrink-0 border-2 border-transparent hover:border-outline-variant transition-colors focus:outline-none">
+<img class="w-full h-full object-cover" data-alt="An atmospheric lifestyle shot of the back of the Alpine Air Jacket in Cloud White, worn by a model looking out towards a bright, expansive horizon. The image showcases the tailored fit and the subtle, minimalist branding element near the neckline. The photography utilizes expansive white space and natural, cool-toned daylight to evoke a sense of breathing room and modern outdoor luxury." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBR41mKkfJmKx5T5NXvS_LD2EgAaNOmc9Ov7JXbu4zDmz97kSzLTuRYhT87g5oRgDses-pF1HprFO6LJFnizrs9vGgsnWEghMv01m27ch8UE4l1xVUzipM9Lx4f8tul7f12eoKkpllZtJwRvcRNVNYCQpl13AVfOBvKzW0xLaY9H1-syp7b0NYUhc7rrStTFrtzvKD8XUOgqVC5-LYR3jRhYOa85h32Vbtl-qxdKidw2UiH2kTWedBm"/>
+</button>
+</div>
+</div>
+<!-- Right: Product Info (4 cols) -->
+<div class="lg:col-span-5 flex flex-col pt-unit-md lg:pt-0">
+<!-- Title & Price -->
+<div class="mb-unit-lg">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-unit-sm">Alpine Air Jacket</h1>
+<p class="font-headline-sm text-headline-sm text-on-surface-variant">$245.00</p>
+</div>
+<!-- Description -->
+<p class="font-body-md text-body-md text-on-surface-variant mb-unit-xl">
+                    Engineered for the elements without compromising on aesthetic restraint. The Alpine Air Jacket delivers technical precision through its lightweight, wind-resistant construction and articulated fit, offering breathable protection for transitional weather.
+                </p>
+<hr class="border-outline-variant mb-unit-lg"/>
+<!-- Color Selection -->
+<div class="mb-unit-lg">
+<div class="flex justify-between items-center mb-unit-md">
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider">Color: <span class="text-on-surface-variant" id="selected-color-text">Cloud White</span></span>
+</div>
+<div class="flex gap-unit-md">
+<!-- Cloud White -->
+<button aria-label="Select Cloud White" class="w-10 h-10 rounded-full border border-primary p-1 focus:outline-none" onclick="document.getElementById('selected-color-text').innerText='Cloud White'">
+<div class="w-full h-full rounded-full bg-[#f9f9ff] border border-outline-variant"></div>
+</button>
+<!-- Black -->
+<button aria-label="Select Black" class="w-10 h-10 rounded-full border border-transparent hover:border-outline-variant transition-colors p-1 focus:outline-none" onclick="document.getElementById('selected-color-text').innerText='Black'">
+<div class="w-full h-full rounded-full bg-primary"></div>
+</button>
+<!-- Sky Blue -->
+<button aria-label="Select Sky Blue" class="w-10 h-10 rounded-full border border-transparent hover:border-outline-variant transition-colors p-1 focus:outline-none" onclick="document.getElementById('selected-color-text').innerText='Sky Blue'">
+<div class="w-full h-full rounded-full bg-secondary-fixed"></div>
+</button>
+</div>
+</div>
+<!-- Size Selection -->
+<div class="mb-unit-xl">
+<div class="flex justify-between items-center mb-unit-md">
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider">Size</span>
+<a class="font-label-sm text-label-sm text-on-surface-variant underline underline-offset-4 hover:text-primary transition-colors" href="#">Size Guide</a>
+</div>
+<div class="grid grid-cols-4 gap-unit-sm">
+<button class="py-3 border border-outline-variant text-center font-label-md text-label-md text-on-surface-variant hover:border-primary hover:text-primary transition-all rounded">S</button>
+<button class="py-3 border border-primary bg-primary text-on-primary text-center font-label-md text-label-md transition-all rounded shadow-[0px_4px_20px_rgba(0,0,0,0.04)]">M</button>
+<button class="py-3 border border-outline-variant text-center font-label-md text-label-md text-on-surface-variant hover:border-primary hover:text-primary transition-all rounded">L</button>
+<button class="py-3 border border-outline-variant text-center font-label-md text-label-md text-on-surface-variant hover:border-primary hover:text-primary transition-all rounded">XL</button>
+</div>
+</div>
+<!-- Actions -->
+<div class="flex flex-col gap-unit-md mb-section-gap">
+<button class="w-full py-4 bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider rounded hover:opacity-90 transition-opacity shadow-[0px_4px_20px_rgba(0,0,0,0.04)] flex justify-center items-center gap-2">
+<span>Add to Bag</span>
+</button>
+<button class="w-full py-4 bg-transparent border border-primary text-primary font-label-md text-label-md uppercase tracking-wider rounded hover:bg-surface-container-low transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+<span>Save to Wishlist</span>
+</button>
+</div>
+<!-- Accordions -->
+<div class="border-t border-outline-variant">
+<!-- Accordion Item 1 -->
+<div class="border-b border-outline-variant">
+<button class="w-full py-unit-lg flex justify-between items-center focus:outline-none group" onclick="toggleAccordion('specs')">
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider group-hover:opacity-70 transition-opacity">Technical Specs</span>
+<span class="material-symbols-outlined text-primary transition-transform duration-300" id="icon-specs">add</span>
+</button>
+<div class="hidden pb-unit-lg overflow-hidden transition-all duration-300" id="content-specs">
+<ul class="list-disc pl-5 font-body-md text-body-md text-on-surface-variant space-y-2">
+<li>Durable Water Repellent (DWR) finish for moisture protection</li>
+<li>High-density wind-resistant outer shell</li>
+<li>Articulated sleeves for enhanced mobility</li>
+<li>Micro-perforated underarm panels for breathability</li>
+<li>Concealed seam-sealed zippered pockets</li>
+</ul>
+</div>
+</div>
+<!-- Accordion Item 2 -->
+<div class="border-b border-outline-variant">
+<button class="w-full py-unit-lg flex justify-between items-center focus:outline-none group" onclick="toggleAccordion('materials')">
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider group-hover:opacity-70 transition-opacity">Materials &amp; Care</span>
+<span class="material-symbols-outlined text-primary transition-transform duration-300" id="icon-materials">add</span>
+</button>
+<div class="hidden pb-unit-lg overflow-hidden transition-all duration-300" id="content-materials">
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">Body: 100% Recycled Nylon<br/>Lining: 100% Polyester Mesh</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Machine wash cold on gentle cycle. Do not bleach. Tumble dry low. Do not iron over printed details or hardware.</p>
+</div>
+</div>
+<!-- Accordion Item 3 -->
+<div class="border-b border-outline-variant">
+<button class="w-full py-unit-lg flex justify-between items-center focus:outline-none group" onclick="toggleAccordion('shipping')">
+<span class="font-label-md text-label-md text-primary uppercase tracking-wider group-hover:opacity-70 transition-opacity">Shipping &amp; Returns</span>
+<span class="material-symbols-outlined text-primary transition-transform duration-300" id="icon-shipping">add</span>
+</button>
+<div class="hidden pb-unit-lg overflow-hidden transition-all duration-300" id="content-shipping">
+<p class="font-body-md text-body-md text-on-surface-variant mb-2">Complimentary standard shipping on all orders over $200. Expedited options available at checkout.</p>
+<p class="font-body-md text-body-md text-on-surface-variant">We accept returns within 30 days of delivery for a full refund. Items must be unworn, unwashed, and with original tags attached.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Shared Component -->
+<footer class="w-full border-t border-outline-variant dark:border-outline bg-surface-container-lowest dark:bg-surface-dim transition-all duration-200">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-section-gap max-w-container-max mx-auto md:px-margin-mobile">
+<!-- Brand Column -->
+<div class="flex flex-col gap-unit-md">
+<span class="font-display-xl-mobile text-headline-md font-black tracking-tighter text-primary dark:text-inverse-primary">ELEVATE</span>
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-outline mt-auto">
+                    © 2024 ELEVATE. ALL RIGHTS RESERVED.
+                </p>
+</div>
+<!-- Links Columns -->
+<div class="flex flex-col gap-unit-md">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline hover:underline decoration-1 underline-offset-4 transition-all" href="#">Shop</a>
+</div>
+<div class="flex flex-col gap-unit-md">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline hover:underline decoration-1 underline-offset-4 transition-all" href="#">Support</a>
+</div>
+<div class="flex flex-col gap-unit-md">
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline hover:underline decoration-1 underline-offset-4 transition-all" href="#">Company</a>
+<a class="font-body-md text-body-md text-on-surface-variant dark:text-outline hover:underline decoration-1 underline-offset-4 transition-all" href="#">Newsletter</a>
+</div>
+</div>
+</footer>
+<!-- Interactive Scripts -->
+<script>
+        function toggleAccordion(id) {
+            const content = document.getElementById(`content-${id}`);
+            const icon = document.getElementById(`icon-${id}`);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.innerText = 'remove';
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                content.classList.add('hidden');
+                icon.innerText = 'add';
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+        
+        // Open the first accordion by default for better UX
+        document.addEventListener("DOMContentLoaded", () => {
+            toggleAccordion('specs');
+        });
+    </script>
+</body></html>
