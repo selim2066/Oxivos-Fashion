@@ -144,7 +144,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           />
 
           {/* Modal Content */}
-          <div className="relative bg-surface w-full max-w-3xl rounded-xl shadow-2xl overflow-hidden flex flex-col md:flex-row max-h-[90vh] md:max-h-[85vh] animate-in zoom-in duration-300 z-10">
+          <div className="relative bg-surface w-full max-w-3xl rounded-xl shadow-2xl overflow-hidden flex flex-col md:flex-row h-[90vh] md:h-[600px] animate-in zoom-in duration-300 z-10">
             {/* Close Button */}
             <button
               onClick={() => setIsQuickViewOpen(false)}
@@ -155,7 +155,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             </button>
 
             {/* Left Side: Image */}
-            <div className="w-full md:w-1/2 bg-card-bg aspect-[4/3] md:aspect-auto md:h-full flex items-center justify-center relative overflow-hidden">
+            <div className="w-full md:w-1/2 bg-card-bg aspect-[4/3] md:aspect-auto md:h-full flex-shrink-0 flex items-center justify-center relative overflow-hidden">
               <img
                 src={product.image}
                 alt={product.name}
@@ -164,7 +164,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             </div>
 
             {/* Right Side: Info & Actions */}
-            <div className="w-full md:w-1/2 p-unit-lg flex flex-col overflow-y-auto max-h-full">
+            <div className="w-full md:w-1/2 p-unit-lg flex flex-col overflow-y-auto flex-grow md:h-full">
               <div className="mb-unit-md">
                 <span className="text-label-sm uppercase text-secondary font-bold tracking-wider mb-1 block">
                   {product.category}
