@@ -23,6 +23,10 @@ export const Header: React.FC = () => {
   const isHome = pathname === "/";
   const [isScrolled, setIsScrolled] = useState(!isHome);
   const [isMounted, setIsMounted] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState<Product[]>([]);
 
   // Set mounted state
   useEffect(() => {
@@ -71,12 +75,6 @@ export const Header: React.FC = () => {
     setIsSearchOpen(false);
     setSearchQuery("");
   }, [pathname]);
-
-  // Rest of state hooks
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState<Product[]>([]);
 
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
