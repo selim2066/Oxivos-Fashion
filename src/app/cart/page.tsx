@@ -7,6 +7,7 @@ import { useCart } from "@/context/CartContext";
 import { ProductCard } from "@/components/ui/ProductCard";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { products } from "@/lib/products";
+import { Button } from "@/components/ui/button";
 
 export default function CartPage() {
   const {
@@ -63,11 +64,11 @@ export default function CartPage() {
 
       <div className="flex flex-col lg:flex-row gap-gutter lg:gap-unit-xl">
         {/* Left Column: Cart Items List (flex-grow) */}
-        <div className="flex-grow flex flex-col gap-unit-lg">
+        <div className="flex-grow flex flex-col gap-4 md:gap-unit-lg">
           {cartItems.map((item) => (
             <div
               key={item.id}
-              className="flex gap-unit-lg py-unit-lg border-b border-outline-variant/45"
+              className="flex gap-4 md:gap-unit-lg py-4 md:py-unit-lg border-b border-outline-variant/45"
             >
               {/* Product Thumbnail */}
               <div className="w-24 h-32 md:w-32 md:h-40 bg-card-bg rounded overflow-hidden flex-shrink-0 flex items-center justify-center">
@@ -178,13 +179,15 @@ export default function CartPage() {
             </div>
 
             {/* Checkout Action */}
-            <button
+            <Button
               onClick={handleCheckout}
-              className="w-full bg-primary text-on-primary py-4 rounded font-label-md text-label-md uppercase tracking-wider hover:opacity-90 transition-opacity shadow-elevate flex justify-center items-center gap-2"
+              variant="default"
+              size="lg"
+              className="w-full flex justify-center items-center gap-2 shadow-elevate"
             >
               <span>Proceed to Checkout</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+              <ArrowRight className="w-4 h-4 text-current" />
+            </Button>
           </div>
         </div>
       </div>

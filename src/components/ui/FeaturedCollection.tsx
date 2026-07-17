@@ -155,7 +155,7 @@ export const FeaturedCollection: React.FC = () => {
           {/* Left Navigation Arrow */}
           <button
             onClick={handlePrev}
-            className="absolute left-0 md:left-4 z-40 bg-surface/90 hover:bg-primary hover:text-on-primary text-primary w-11 h-11 rounded-full border border-outline/20 flex items-center justify-center transition-all shadow-sm active:scale-95 hover:scale-105"
+            className="absolute left-0 md:left-4 z-40 bg-surface/90 hover:bg-primary hover:text-on-primary text-primary w-11 h-11 rounded-full border border-outline/20 hidden md:flex items-center justify-center transition-all shadow-sm active:scale-95 hover:scale-105"
             aria-label="Previous slide"
           >
             <ChevronLeft className="w-5 h-5" />
@@ -307,7 +307,7 @@ export const FeaturedCollection: React.FC = () => {
           {/* Right Navigation Arrow */}
           <button
             onClick={handleNext}
-            className="absolute right-0 md:right-4 z-40 bg-surface/90 hover:bg-primary hover:text-on-primary text-primary w-11 h-11 rounded-full border border-outline/20 flex items-center justify-center transition-all shadow-sm active:scale-95 hover:scale-105"
+            className="absolute right-0 md:right-4 z-40 bg-surface/90 hover:bg-primary hover:text-on-primary text-primary w-11 h-11 rounded-full border border-outline/20 hidden md:flex items-center justify-center transition-all shadow-sm active:scale-95 hover:scale-105"
             aria-label="Next slide"
           >
             <ChevronRight className="w-5 h-5" />
