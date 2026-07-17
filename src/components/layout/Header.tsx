@@ -20,24 +20,34 @@ export const Header: React.FC = () => {
   const currentCategory = searchParams.get("category") || "";
   const isWishlist = searchParams.get("wishlist") === "true";
 
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [searchResults, setSearchResults] = useState<Product[]>([]);
+  const isHome = pathname === "/";
+  const [isScrolled, setIsScrolled] = useState(!isHome);
+  const [isMounted, setIsMounted] = useState(false);
+
+  // Set mounted state
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // Monitor scroll for nav styling
   useEffect(() => {
+    if (!isHome) {
+      setIsScrolled(true);
+      return;
+    }
+
+    setIsScrolled(window.scrollY >= 80);
+
     const handleScroll = () => {
-      if (window.scrollY > 20) {
+      if (window.scrollY >= 80) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHome, pathname]);
 
   // Update search results
   useEffect(() => {
@@ -62,6 +72,12 @@ export const Header: React.FC = () => {
     setSearchQuery("");
   }, [pathname]);
 
+  // Rest of state hooks
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResults, setSearchResults] = useState<Product[]>([]);
+
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (searchQuery.trim()) {
@@ -78,20 +94,37 @@ export const Header: React.FC = () => {
     { label: "Accessories", href: "/products?category=Accessories" },
   ];
 
+  // Dynamic Theme-Aware styles based on scroll state
+  // On non-home pages, we are always solid glass (isScrolled=true)
+  const navActive = isMounted ? isScrolled : true;
+  
+  const logoColorClass = navActive ? "text-primary" : "text-white";
+  const navColorClass = navActive 
+    ? "text-on-surface-variant border-transparent hover:text-primary hover:border-outline-variant/45" 
+    : "text-white/80 border-transparent hover:text-white hover:border-white/50";
+  const activeColorClass = navActive ? "text-primary border-primary" : "text-white border-white";
+  const iconColorClass = navActive ? "text-primary" : "text-white";
+  const trailingIconBgClass = navActive ? "hover:bg-surface-container" : "hover:bg-white/10";
+
   return (
     <>
+      {/* Subtle top gradient scrim for WCAG AA readability on the homepage overlay */}
+      {!navActive && isHome && (
+        <div className="fixed top-0 left-0 w-full h-[120px] bg-gradient-to-b from-black/45 via-black/15 to-transparent z-40 pointer-events-none transition-opacity duration-300" />
+      )}
+
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ease-in-out ${
-          isScrolled
-            ? "bg-surface/90 backdrop-blur-xl shadow-md py-3"
-            : "bg-surface/50 backdrop-blur-md py-5"
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ease-in-out border-b ${
+          navActive
+            ? "bg-surface/90 backdrop-blur-xl shadow-md py-3 border-outline-variant/20"
+            : "bg-transparent py-5 border-transparent"
         }`}
       >
         <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-12">
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(true)}
-            className="md:hidden text-primary hover:opacity-70 transition-opacity"
+            className={`md:hidden hover:opacity-75 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded p-1 ${iconColorClass}`}
             aria-label="Open menu"
           >
             <Menu className="w-6 h-6" />
@@ -100,7 +133,7 @@ export const Header: React.FC = () => {
           {/* Brand */}
           <Link
             href="/"
-            className="text-headline-sm md:text-headline-md font-extrabold tracking-tighter text-primary hover:opacity-75 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded"
+            className={`text-headline-sm md:text-headline-md font-extrabold tracking-tighter hover:opacity-75 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded ${logoColorClass}`}
           >
             Oxivos Fashion<span className="text-error">.</span>
           </Link>
@@ -127,8 +160,8 @@ export const Header: React.FC = () => {
                   href={link.href}
                   className={`font-label-md text-label-md uppercase tracking-wider transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded px-1 border-b pb-1 ${
                     isActive
-                      ? "text-primary border-primary"
-                      : "text-on-surface-variant border-transparent hover:text-primary hover:border-outline-variant/45"
+                      ? activeColorClass
+                      : navColorClass
                   }`}
                 >
                   {link.label}
@@ -137,12 +170,12 @@ export const Header: React.FC = () => {
             })}
           </div>
 
-          <div className="flex items-center space-x-unit-md text-primary">
+          <div className={`flex items-center space-x-unit-md ${iconColorClass}`}>
             <ThemeToggle />
 
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="hover:opacity-75 transition-opacity duration-300 p-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full"
+              className={`hover:opacity-75 transition-opacity duration-300 p-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full ${trailingIconBgClass}`}
               aria-label="Search products"
             >
               <Search className="w-5 h-5" />
@@ -151,7 +184,7 @@ export const Header: React.FC = () => {
             {/* Wishlist Link with Badge */}
             <Link
               href="/products?wishlist=true"
-              className="hover:opacity-75 transition-opacity duration-300 p-1 relative focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full"
+              className={`hover:opacity-75 transition-opacity duration-300 p-1 relative focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full ${trailingIconBgClass}`}
               aria-label="View wishlist"
             >
               <Heart className="w-5 h-5" />
@@ -168,7 +201,7 @@ export const Header: React.FC = () => {
             {/* Cart Link with Badge */}
             <Link
               href="/cart"
-              className="hover:opacity-75 transition-opacity duration-300 p-1 relative focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full"
+              className={`hover:opacity-75 transition-opacity duration-300 p-1 relative focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full ${trailingIconBgClass}`}
               aria-label="View cart"
             >
               <ShoppingBag className="w-5 h-5" />

@@ -135,11 +135,9 @@ export const HeroSection: React.FC = () => {
         <span className="font-mono text-[10px] tracking-widest uppercase opacity-70">
           {activeSlide.edition}
         </span>
-        <span className="font-sans text-label-md tracking-[0.25em] font-bold uppercase">
-          OxivosFashion
-        </span>
-        <div className="hidden md:flex space-x-6 text-[10px] tracking-widest uppercase font-semibold pointer-events-auto">
+        <div className="hidden md:flex items-center space-x-3 text-[10px] tracking-widest uppercase font-semibold pointer-events-auto">
           <Link href="/products" className="hover:opacity-70 transition-opacity">Collections</Link>
+          <span className="opacity-40">/</span>
           <Link href="/products" className="hover:opacity-70 transition-opacity">Lookbook</Link>
         </div>
       </div>

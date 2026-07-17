@@ -15,7 +15,7 @@ export default function Home() {
   const bestSellers = products.filter((p) => p.rating >= 4.8).slice(0, 3);
 
   return (
-    <main className="bg-surface text-on-surface min-h-screen overflow-x-hidden pt-16">
+    <main className="bg-surface text-on-surface min-h-screen overflow-x-hidden pt-0">
       {/* Hero Section */}
       <HeroSection />
 
