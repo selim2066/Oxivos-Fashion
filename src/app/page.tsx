@@ -75,7 +75,7 @@ export default function Home() {
             {featuredProducts.map((product) => (
               <div
                 key={product.id}
-                className="bg-surface/50 backdrop-blur-md p-4 rounded-xl border border-white/50 shadow-elevate hover:shadow-elevate-glass transition-all duration-300"
+                className="bg-surface/60 p-4 rounded-xl border border-white/50 shadow-elevate hover:shadow-elevate-glass transition-all duration-300"
               >
                 <ProductCard product={product} />
               </div>
