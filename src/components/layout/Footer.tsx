@@ -185,7 +185,7 @@ export const Footer: React.FC = () => {
               transition={{ duration: 0.6, ease: "easeOut" }}
               className="font-heading font-extrabold uppercase text-primary leading-none w-full whitespace-nowrap"
               style={{
-                fontSize: "clamp(1.8rem, 7.8vw, 6.2rem)",
+                fontSize: "clamp(2rem, 8.8vw, 7.8rem)",
                 letterSpacing: "-0.04em",
               }}
             >
