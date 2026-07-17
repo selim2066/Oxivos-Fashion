@@ -6,6 +6,7 @@ import { WishlistProvider } from "../context/WishlistContext";
 import { Header } from "../components/layout/Header";
 import { Footer } from "../components/layout/Footer";
 import { SmoothScroll } from "../components/layout/SmoothScroll";
+import { ThemeProvider } from "../components/theme-provider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -35,16 +36,24 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${inter.variable} ${plusJakartaSans.variable} h-full`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background text-on-surface">
         <SmoothScroll>
-          <CartProvider>
-            <WishlistProvider>
-              <Header />
-              <div className="flex-grow flex flex-col">{children}</div>
-              <Footer />
-            </WishlistProvider>
-          </CartProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <CartProvider>
+              <WishlistProvider>
+                <Header />
+                <div className="flex-grow flex flex-col">{children}</div>
+                <Footer />
+              </WishlistProvider>
+            </CartProvider>
+          </ThemeProvider>
         </SmoothScroll>
       </body>
     </html>

@@ -8,6 +8,7 @@ import { useCart } from "../../context/CartContext";
 import { useWishlist } from "../../context/WishlistContext";
 import { products } from "../../lib/products";
 import { Product } from "../../lib/types";
+import { ThemeToggle } from "../ui/ThemeToggle";
 
 export const Header: React.FC = () => {
   const { cartCount } = useCart();
@@ -121,6 +122,8 @@ export const Header: React.FC = () => {
 
           {/* Trailing Icons */}
           <div className="flex items-center space-x-unit-md text-primary">
+            <ThemeToggle />
+
             <button
               onClick={() => setIsSearchOpen(true)}
               className="hover:opacity-75 transition-opacity duration-300 p-1"
@@ -139,7 +142,7 @@ export const Header: React.FC = () => {
               {wishlistItems.length > 0 && (
                 <span
                   className="absolute -top-1 -right-1 w-4 h-4 rounded-full flex items-center justify-center font-bold text-[9px]"
-                  style={{ backgroundColor: '#436274', color: '#ffffff' }}
+                  style={{ backgroundColor: 'var(--color-secondary)', color: 'var(--color-on-secondary)' }}
                 >
                   {wishlistItems.length}
                 </span>
@@ -156,7 +159,7 @@ export const Header: React.FC = () => {
               {cartCount > 0 && (
                 <span
                   className="absolute -top-1 -right-1 w-4 h-4 rounded-full flex items-center justify-center font-bold text-[9px]"
-                  style={{ backgroundColor: '#000000', color: '#ffffff' }}
+                  style={{ backgroundColor: 'var(--color-elevate-primary)', color: 'var(--color-on-primary)' }}
                 >
                   {cartCount}
                 </span>

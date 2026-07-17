@@ -11,6 +11,126 @@
    source of truth. Do NOT add ad-hoc values outside this block.
    ================================================================ */
 
+:root {
+  --surface: #f9f9ff;
+  --surface-dim: #d0daf2;
+  --surface-bright: #f9f9ff;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f0f3ff;
+  --surface-container: #e8eeff;
+  --surface-container-high: #dfe8ff;
+  --surface-container-highest: #d9e3fb;
+  --on-surface: #111c2d;
+  --on-surface-variant: #444748;
+  --inverse-surface: #273143;
+  --inverse-on-surface: #ecf0ff;
+  --outline: #747878;
+  --outline-variant: #c4c7c7;
+  --surface-tint: #5f5e5e;
+  --surface-variant: #d9e3fb;
+
+  --elevate-primary: #000000;
+  --on-elevate-primary: #ffffff;
+  --primary-container: #1c1b1b;
+  --on-primary-container: #858383;
+  --inverse-primary: #c9c6c5;
+
+  --secondary: #436274;
+  --on-secondary: #ffffff;
+  --secondary-container: #c4e4f9;
+  --on-secondary-container: #486778;
+
+  --elevate-tertiary: #000000;
+  --on-elevate-tertiary: #ffffff;
+  --tertiary-container: #191c1e;
+  --on-tertiary-container: #818487;
+
+  --elevate-error: #ba1a1a;
+  --on-elevate-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #93000a;
+
+  --primary-fixed: #e5e2e1;
+  --primary-fixed-dim: #c9c6c5;
+  --on-primary-fixed: #1c1b1b;
+  --on-primary-fixed-variant: #474646;
+
+  --secondary-fixed: #c7e7fc;
+  --secondary-fixed-dim: #abcbdf;
+  --on-secondary-fixed: #001e2c;
+  --on-secondary-fixed-variant: #2b4a5b;
+
+  --tertiary-fixed: #e0e3e6;
+  --tertiary-fixed-dim: #c4c7ca;
+  --on-tertiary-fixed: #191c1e;
+  --on-tertiary-fixed-variant: #44474a;
+
+  --elevate-background: #f9f9ff;
+  --on-background: #111c2d;
+
+  --card-bg: #f2f4f7;
+}
+
+.dark {
+  --surface: #0d0d10;
+  --surface-dim: #18181c;
+  --surface-bright: #1b1b22;
+  --surface-container-lowest: #0a0a0d;
+  --surface-container-low: #18181c;
+  --surface-container: #202026;
+  --surface-container-high: #2b2b33;
+  --surface-container-highest: #373742;
+  --on-surface: #f5f5f7;
+  --on-surface-variant: #a1a1a9;
+  --inverse-surface: #f9f9ff;
+  --inverse-on-surface: #111c2d;
+  --outline: #52525b;
+  --outline-variant: #3f3f46;
+  --surface-tint: #a1a1a9;
+  --surface-variant: #202026;
+
+  --elevate-primary: #f5f5f5;
+  --on-elevate-primary: #0d0d10;
+  --primary-container: #2b2b33;
+  --on-primary-container: #d4d4d8;
+  --inverse-primary: #1c1b1b;
+
+  --secondary: #3b5361;
+  --on-secondary: #f5f5f7;
+  --secondary-container: #1b2c36;
+  --on-secondary-container: #a3c2d6;
+
+  --elevate-tertiary: #f5f5f5;
+  --on-elevate-tertiary: #0d0d10;
+  --tertiary-container: #2b2b33;
+  --on-tertiary-container: #d4d4d8;
+
+  --elevate-error: #ffb4ab;
+  --on-elevate-error: #690005;
+  --error-container: #93000a;
+  --on-error-container: #ffdad6;
+
+  --primary-fixed: #2b2b33;
+  --primary-fixed-dim: #1e1e24;
+  --on-primary-fixed: #f5f5f5;
+  --on-primary-fixed-variant: #d4d4d8;
+
+  --secondary-fixed: #1b2c36;
+  --secondary-fixed-dim: #132027;
+  --on-secondary-fixed: #a3c2d6;
+  --on-secondary-fixed-variant: #7fa4bd;
+
+  --tertiary-fixed: #22252a;
+  --tertiary-fixed-dim: #1a1c20;
+  --on-tertiary-fixed: #d1d5db;
+  --on-tertiary-fixed-variant: #9ca3af;
+
+  --elevate-background: #0d0d10;
+  --on-background: #f5f5f7;
+
+  --card-bg: #141418;
+}
+
 @theme inline {
   /* ── Fonts ───────────────────────────────────────────────────── */
   --font-sans: var(--font-inter);
@@ -18,65 +138,65 @@
   --font-mono: var(--font-geist-mono);
 
   /* ── Elevate Brand Colors ────────────────────────────────────── */
-  --color-surface: #f9f9ff;
-  --color-surface-dim: #d0daf2;
-  --color-surface-bright: #f9f9ff;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #f0f3ff;
-  --color-surface-container: #e8eeff;
-  --color-surface-container-high: #dfe8ff;
-  --color-surface-container-highest: #d9e3fb;
-  --color-on-surface: #111c2d;
-  --color-on-surface-variant: #444748;
-  --color-inverse-surface: #273143;
-  --color-inverse-on-surface: #ecf0ff;
-  --color-outline: #747878;
-  --color-outline-variant: #c4c7c7;
-  --color-surface-tint: #5f5e5e;
-  --color-surface-variant: #d9e3fb;
+  --color-surface: var(--surface);
+  --color-surface-dim: var(--surface-dim);
+  --color-surface-bright: var(--surface-bright);
+  --color-surface-container-lowest: var(--surface-container-lowest);
+  --color-surface-container-low: var(--surface-container-low);
+  --color-surface-container: var(--surface-container);
+  --color-surface-container-high: var(--surface-container-high);
+  --color-surface-container-highest: var(--surface-container-highest);
+  --color-on-surface: var(--on-surface);
+  --color-on-surface-variant: var(--on-surface-variant);
+  --color-inverse-surface: var(--inverse-surface);
+  --color-inverse-on-surface: var(--inverse-on-surface);
+  --color-outline: var(--outline);
+  --color-outline-variant: var(--outline-variant);
+  --color-surface-tint: var(--surface-tint);
+  --color-surface-variant: var(--surface-variant);
 
-  --color-elevate-primary: #000000;
-  --color-on-elevate-primary: #ffffff;
+  --color-elevate-primary: var(--elevate-primary);
+  --color-on-elevate-primary: var(--on-elevate-primary);
   --color-on-primary: var(--color-on-elevate-primary);
-  --color-primary-container: #1c1b1b;
-  --color-on-primary-container: #858383;
-  --color-inverse-primary: #c9c6c5;
+  --color-primary-container: var(--primary-container);
+  --color-on-primary-container: var(--on-primary-container);
+  --color-inverse-primary: var(--inverse-primary);
 
-  --color-secondary: #436274;
-  --color-on-secondary: #ffffff;
-  --color-secondary-container: #c4e4f9;
-  --color-on-secondary-container: #486778;
+  --color-secondary: var(--secondary);
+  --color-on-secondary: var(--on-secondary);
+  --color-secondary-container: var(--secondary-container);
+  --color-on-secondary-container: var(--on-secondary-container);
 
-  --color-elevate-tertiary: #000000;
-  --color-on-elevate-tertiary: #ffffff;
-  --color-tertiary-container: #191c1e;
-  --color-on-tertiary-container: #818487;
+  --color-elevate-tertiary: var(--elevate-tertiary);
+  --color-on-elevate-tertiary: var(--on-elevate-tertiary);
+  --color-tertiary-container: var(--tertiary-container);
+  --color-on-tertiary-container: var(--on-tertiary-container);
 
-  --color-elevate-error: #ba1a1a;
-  --color-on-elevate-error: #ffffff;
-  --color-error-container: #ffdad6;
-  --color-on-error-container: #93000a;
+  --color-elevate-error: var(--elevate-error);
+  --color-on-elevate-error: var(--on-elevate-error);
+  --color-error-container: var(--error-container);
+  --color-on-error-container: var(--on-error-container);
 
-  --color-primary-fixed: #e5e2e1;
-  --color-primary-fixed-dim: #c9c6c5;
-  --color-on-primary-fixed: #1c1b1b;
-  --color-on-primary-fixed-variant: #474646;
+  --color-primary-fixed: var(--primary-fixed);
+  --color-primary-fixed-dim: var(--primary-fixed-dim);
+  --color-on-primary-fixed: var(--on-primary-fixed);
+  --color-on-primary-fixed-variant: var(--on-primary-fixed-variant);
 
-  --color-secondary-fixed: #c7e7fc;
-  --color-secondary-fixed-dim: #abcbdf;
-  --color-on-secondary-fixed: #001e2c;
-  --color-on-secondary-fixed-variant: #2b4a5b;
+  --color-secondary-fixed: var(--secondary-fixed);
+  --color-secondary-fixed-dim: var(--secondary-fixed-dim);
+  --color-on-secondary-fixed: var(--on-secondary-fixed);
+  --color-on-secondary-fixed-variant: var(--on-secondary-fixed-variant);
 
-  --color-tertiary-fixed: #e0e3e6;
-  --color-tertiary-fixed-dim: #c4c7ca;
-  --color-on-tertiary-fixed: #191c1e;
-  --color-on-tertiary-fixed-variant: #44474a;
+  --color-tertiary-fixed: var(--tertiary-fixed);
+  --color-tertiary-fixed-dim: var(--tertiary-fixed-dim);
+  --color-on-tertiary-fixed: var(--on-tertiary-fixed);
+  --color-on-tertiary-fixed-variant: var(--on-tertiary-fixed-variant);
 
-  --color-elevate-background: #f9f9ff;
-  --color-on-background: #111c2d;
+  --color-elevate-background: var(--elevate-background);
+  --color-on-background: var(--on-background);
 
   /* Functional alias used by reference designs for card backgrounds */
-  --color-card-bg: #f2f4f7;
+  --color-card-bg: var(--card-bg);
 
   /* ── shadcn/ui compatibility overrides (mapped to Elevate tokens) ── */
   --color-background: var(--color-elevate-background);
@@ -261,15 +381,23 @@
     @apply scroll-smooth;
   }
 
-  /* Force white text on filled button variants regardless of Tailwind class order */
-  [data-slot="button"][data-variant="default"],
-  [data-slot="button"][data-variant="secondary"],
-  [data-slot="button"][data-variant="destructive"] {
-    color: #ffffff !important;
+  /* Force theme-aware text on filled button variants regardless of Tailwind class order */
+  [data-slot="button"][data-variant="default"] {
+    color: var(--color-on-primary) !important;
   }
-  [data-slot="button"][data-variant="default"] svg,
-  [data-slot="button"][data-variant="secondary"] svg,
+  [data-slot="button"][data-variant="default"] svg {
+    color: var(--color-on-primary) !important;
+  }
+  [data-slot="button"][data-variant="secondary"] {
+    color: var(--color-on-secondary) !important;
+  }
+  [data-slot="button"][data-variant="secondary"] svg {
+    color: var(--color-on-secondary) !important;
+  }
+  [data-slot="button"][data-variant="destructive"] {
+    color: var(--color-on-elevate-error) !important;
+  }
   [data-slot="button"][data-variant="destructive"] svg {
-    color: #ffffff !important;
+    color: var(--color-on-elevate-error) !important;
   }
 }

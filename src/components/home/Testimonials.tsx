@@ -80,8 +80,8 @@ function StarRating({ rating }: { rating: number }) {
           key={i}
           className="w-4 h-4"
           style={{
-            fill: i < rating ? "#000000" : "none",
-            color: i < rating ? "#000000" : "#c4c7c7",
+            fill: i < rating ? "var(--color-elevate-primary)" : "none",
+            color: i < rating ? "var(--color-elevate-primary)" : "var(--color-outline-variant)",
             strokeWidth: 1.5,
           }}
         />

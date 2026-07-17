@@ -248,7 +248,7 @@ export const FeaturedCollection: React.FC = () => {
                           className="absolute inset-0 pointer-events-none z-20"
                         >
                           {/* Top-Left Tag Pill */}
-                          <div className="absolute top-4 left-4 bg-white/90 backdrop-blur text-primary text-[9px] md:text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest shadow-sm pointer-events-auto">
+                          <div className="absolute top-4 left-4 bg-surface-container-lowest/90 backdrop-blur text-primary text-[9px] md:text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-widest shadow-sm pointer-events-auto">
                             {item.tag}
                           </div>
 
@@ -275,7 +275,7 @@ export const FeaturedCollection: React.FC = () => {
                           </div>
 
                           {/* Bottom-Right Price Badge */}
-                          <div className="absolute bottom-4 right-4 bg-white text-primary text-[9px] md:text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg border border-outline-variant/10 flex flex-col items-end leading-none pointer-events-auto">
+                          <div className="absolute bottom-4 right-4 bg-surface-container-lowest text-primary text-[9px] md:text-[10px] font-bold px-3 py-1.5 rounded-full shadow-lg border border-outline-variant/10 flex flex-col items-end leading-none pointer-events-auto">
                             <span className="text-on-surface-variant font-normal normal-case text-[7px] md:text-[8px] mb-1">
                               Starts From
                             </span>

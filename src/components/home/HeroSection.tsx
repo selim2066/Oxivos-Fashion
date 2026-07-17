@@ -37,7 +37,7 @@ const heroSlides: HeroSlide[] = [
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1749032715101-ec47da1727e7?q=80&w=1143&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "https://images.unsplash.com/photo-1718351041906-d1086f502f8a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     headline: "TRANSIT LAYERS",
     subtext: "A curated edit of refined silhouettes, built for transitional climates.",
     edition: "EDITION — 03",
