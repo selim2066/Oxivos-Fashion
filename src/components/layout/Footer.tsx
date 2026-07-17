@@ -23,14 +23,14 @@ export const Footer: React.FC = () => {
   return (
     <footer className="w-full bg-surface-container-lowest py-16 md:py-24 mt-auto transition-all duration-200 border-t border-outline-variant/30">
       <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col">
-        
+
         {/* Top Row: Tagline + Form & Links */}
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-gutter items-start">
-          
+
           {/* Left Column: Brand Tagline Statement */}
           <div className="md:col-span-6 flex flex-col gap-6 max-w-md">
             <h3 className="font-heading text-headline-sm text-primary uppercase font-bold tracking-tight">
-              OxivosFashion
+              Oxivos Fashion
             </h3>
             <p className="font-sans text-body-lg text-on-surface-variant leading-relaxed">
               Every stitch has intent — discipline, craft, and quiet elevation. Designed at the intersection of technical performance and refined tailoring.
@@ -50,7 +50,7 @@ export const Footer: React.FC = () => {
                   placeholder="Your name"
                 />
               </div>
-              
+
               <div className="flex flex-col gap-1 relative">
                 <label className="text-[10px] tracking-widest uppercase text-on-surface-variant/70 font-bold">
                   Email
@@ -84,7 +84,7 @@ export const Footer: React.FC = () => {
 
           {/* Right Column: Nav Links & Social links */}
           <div className="md:col-span-6 flex flex-row gap-16 md:gap-24 md:justify-end mt-4 md:mt-0">
-            
+
             {/* Quick Links Menu */}
             <div className="flex flex-col gap-4">
               <span className="text-[10px] tracking-[0.2em] uppercase text-on-surface-variant/60 font-bold">
@@ -165,31 +165,31 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Row: Massive Wordmark & Details */}
         <div className="relative flex flex-col w-full overflow-hidden select-none pb-4">
-          
+
           {/* Top Tagline positioned above wordmark on desktop, below on mobile */}
           <div className="mb-4 md:mb-0 md:absolute md:top-2 md:right-0 text-left md:text-right z-10">
             <span className="text-label-sm uppercase tracking-widest text-on-surface-variant font-bold">
               Design, Product & Craft
             </span>
           </div>
-          
+
           {/* Wordmark with Accent dot */}
           <div className="relative w-full flex items-end pt-8 md:pt-12">
             {/* Small red/accent dot above first letter 'O' */}
             <div className="absolute left-[3px] top-3.5 md:top-4 w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-[#ba1a1a]" />
-            
-            <motion.h2
+
+             <motion.h2
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="font-heading font-extrabold uppercase text-primary leading-none w-full whitespace-nowrap overflow-hidden"
+              className="font-heading font-extrabold uppercase text-primary leading-none w-full whitespace-nowrap"
               style={{
-                fontSize: "clamp(2rem, 11vw, 9.5rem)",
+                fontSize: "clamp(1.8rem, 7.8vw, 6.2rem)",
                 letterSpacing: "-0.04em",
               }}
             >
-              OxivosFashion
+              Oxivos Fashion
             </motion.h2>
           </div>
         </div>
