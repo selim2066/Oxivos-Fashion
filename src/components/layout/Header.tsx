@@ -71,7 +71,7 @@ export const Header: React.FC = () => {
   };
 
   const navLinks = [
-    { label: "New Arrivals", href: "/products" },
+    { label: "Shop", href: "/products" },
     { label: "Men", href: "/products?category=Men" },
     { label: "Women", href: "/products?category=Women" },
     { label: "Kids", href: "/products?category=Kids" },
@@ -102,7 +102,7 @@ export const Header: React.FC = () => {
             href="/"
             className="text-headline-sm md:text-headline-md font-extrabold tracking-tighter text-primary hover:opacity-75 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded"
           >
-            OXIVOS FASHION
+            Oxivos Fashion<span className="text-error">.</span>
           </Link>
 
           <div className="hidden md:flex space-x-unit-lg items-center">
@@ -125,10 +125,10 @@ export const Header: React.FC = () => {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className={`font-label-md text-label-md uppercase tracking-wider transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded px-1 ${
+                  className={`font-label-md text-label-md uppercase tracking-wider transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded px-1 border-b pb-1 ${
                     isActive
-                      ? "text-primary border-b border-primary pb-1"
-                      : "text-on-surface-variant hover:text-primary hover:opacity-70"
+                      ? "text-primary border-primary"
+                      : "text-on-surface-variant border-transparent hover:text-primary hover:border-outline-variant/45"
                   }`}
                 >
                   {link.label}
@@ -194,7 +194,7 @@ export const Header: React.FC = () => {
           />
           <div className="relative w-4/5 max-w-sm bg-surface h-full shadow-2xl flex flex-col p-6 animate-in slide-in-from-left duration-300">
             <div className="flex justify-between items-center mb-10">
-              <span className="font-extrabold tracking-tighter text-primary text-headline-sm">OXIVOS FASHION</span>
+              <span className="font-extrabold tracking-tighter text-primary text-headline-sm">Oxivos Fashion<span className="text-error">.</span></span>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="text-primary p-1"
@@ -246,7 +246,7 @@ export const Header: React.FC = () => {
       {isSearchOpen && (
         <div className="fixed inset-0 z-50 bg-surface/95 backdrop-blur-xl flex flex-col animate-in fade-in duration-300">
           <div className="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto py-6">
-            <span className="font-extrabold tracking-tighter text-primary text-headline-sm">OXIVOS FASHION SEARCH</span>
+            <span className="font-extrabold tracking-tighter text-primary text-headline-sm">Oxivos Search<span className="text-error">.</span></span>
             <button
               onClick={() => setIsSearchOpen(false)}
               className="text-primary hover:opacity-75 transition-opacity p-2"
