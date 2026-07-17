@@ -27,20 +27,20 @@ export default function Home() {
       <FeaturedCollection />
 
       {/* Best Sellers Section */}
-      <section className="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-t border-outline-variant/30">
-        <div className="mb-unit-xl">
-          <span className="text-label-sm font-bold uppercase tracking-widest text-secondary block mb-1">
+      <section className="py-12 sm:py-16 md:py-section-gap px-4 sm:px-6 md:px-8 lg:px-12 max-w-[1440px] mx-auto border-t border-outline-variant/30">
+        <div className="mb-6 sm:mb-8 md:mb-unit-xl">
+          <span className="text-[10px] sm:text-label-sm font-bold uppercase tracking-widest text-secondary block mb-1">
             Customer Favorites
           </span>
-          <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary uppercase">
+          <h2 className="font-heading text-xl sm:text-2xl md:text-headline-lg text-primary uppercase font-black">
             Best Sellers
           </h2>
-          <p className="font-body-md text-on-surface-variant mt-2 max-w-xl">
+          <p className="text-xs sm:text-sm md:text-base text-on-surface-variant mt-2 max-w-xl leading-relaxed">
             Refined technical essentials recommended by our community. Built to endure, styled for the modern landscape.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-gutter">
           {bestSellers.map((product) => (
             <div key={product.id} className="flex flex-col">
               <ProductCard product={product} />
@@ -50,8 +50,8 @@ export default function Home() {
       </section>
 
       {/* New Arrivals (Themed Background) */}
-      <section className="py-section-gap relative overflow-hidden text-center">
-        {/* Soft mountain graphic backdrop */}
+      <section className="py-12 sm:py-16 md:py-section-gap relative overflow-hidden text-center">
+        {/* Soft backdrop */}
         <div className="absolute inset-0 z-0">
           <div
             className="w-full h-full bg-cover bg-center opacity-40"
@@ -64,33 +64,32 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-surface via-surface/85 to-surface" />
         </div>
 
-        <div className="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-          <span className="text-label-sm font-bold uppercase tracking-widest text-secondary block mb-1">
+        <div className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+          <span className="text-[10px] sm:text-label-sm font-bold uppercase tracking-widest text-secondary block mb-1">
             Season Essentials
           </span>
-          <h2 className="font-headline-md text-headline-md text-primary mb-2 uppercase font-black">
+          <h2 className="font-heading text-xl sm:text-2xl md:text-headline-md text-primary mb-2 uppercase font-black">
             New Arrivals
           </h2>
-          <p className="font-body-md text-on-surface-variant mb-unit-xl">
+          <p className="text-xs sm:text-sm text-on-surface-variant mb-6 sm:mb-8 md:mb-unit-xl max-w-md mx-auto">
             Fresh essentials inspired by open skies and new horizons.
           </p>
 
-          {/* Featured items */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter text-left">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-gutter text-left">
             {featuredProducts.map((product) => (
               <div
                 key={product.id}
-                className="bg-surface/60 p-4 rounded-xl border border-white/50 shadow-elevate hover:shadow-elevate-glass transition-all duration-300"
+                className="bg-surface/60 p-2 sm:p-3 md:p-4 rounded-lg sm:rounded-xl border border-white/50 shadow-elevate hover:shadow-elevate-glass transition-all duration-300"
               >
                 <ProductCard product={product} />
               </div>
             ))}
           </div>
 
-          <div className="mt-unit-xl flex justify-center">
+          <div className="mt-6 sm:mt-8 md:mt-unit-xl flex justify-center">
             <Link
               href="/products"
-              className="bg-transparent border border-primary text-primary font-label-md text-label-md uppercase px-unit-xl py-unit-md hover:bg-primary hover:text-on-primary transition-colors duration-300 rounded-DEFAULT inline-block"
+              className="bg-transparent border border-primary text-primary text-[10px] sm:text-xs font-bold uppercase tracking-widest px-5 sm:px-8 py-2.5 sm:py-3 hover:bg-primary hover:text-on-primary transition-colors duration-300 rounded inline-block"
             >
               View All Products
             </Link>

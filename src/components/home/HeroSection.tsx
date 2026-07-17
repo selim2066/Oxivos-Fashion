@@ -49,7 +49,7 @@ export const HeroSection: React.FC = () => {
   const nextIndex = (activeIndex + 1) % heroSlides.length;
   const nextSlide = heroSlides[nextIndex];
 
-  // Touch handlers for mobile swipe gestures
+  // Touch swipe state
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
   const minSwipeDistance = 50;
@@ -69,12 +69,12 @@ export const HeroSection: React.FC = () => {
     setProgress(0);
   };
 
-  // Timer interval for auto-advance and progress bar tracking
+  // Auto-advance timer
   useEffect(() => {
     if (shouldReduceMotion || isHovered) return;
 
-    const intervalTime = 50; // ms
-    const increment = (intervalTime / 6000) * 100; // total 6s duration
+    const intervalTime = 50;
+    const increment = (intervalTime / 6000) * 100;
 
     const timer = setInterval(() => {
       setProgress((prev) => {
@@ -89,33 +89,26 @@ export const HeroSection: React.FC = () => {
     return () => clearInterval(timer);
   }, [activeIndex, isHovered, shouldReduceMotion]);
 
-  // Touch swipe callbacks
+  // Touch handlers
   const handleTouchStart = (e: React.TouchEvent) => {
     setTouchStart(e.targetTouches[0].clientX);
   };
-
   const handleTouchMove = (e: React.TouchEvent) => {
     setTouchEnd(e.targetTouches[0].clientX);
   };
-
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
     const distance = touchStart - touchEnd;
-    const isLeftSwipe = distance > minSwipeDistance;
-    const isRightSwipe = distance < -minSwipeDistance;
-
-    if (isLeftSwipe) {
-      handleNext();
-    } else if (isRightSwipe) {
-      handlePrev();
-    }
+    if (distance > minSwipeDistance) handleNext();
+    else if (distance < -minSwipeDistance) handlePrev();
     setTouchStart(null);
     setTouchEnd(null);
   };
 
   return (
     <section
-      className="relative w-full h-[90vh] md:h-screen bg-black overflow-hidden flex flex-col justify-center"
+      className="relative w-full bg-black overflow-hidden flex flex-col"
+      style={{ height: "calc(100svh - 0px)" }}  /* use svh for true mobile viewport */
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onTouchStart={handleTouchStart}
@@ -123,7 +116,7 @@ export const HeroSection: React.FC = () => {
       onTouchEnd={handleTouchEnd}
     >
 
-      {/* Carousel Background Images (Crossfade & Ken Burns Zoom) */}
+      {/* ─── Background Image Carousel ────────────────────────────────────── */}
       <div className="absolute inset-0 z-0 w-full h-full">
         <AnimatePresence initial={false} mode="popLayout">
           <motion.div
@@ -136,7 +129,7 @@ export const HeroSection: React.FC = () => {
           >
             <motion.div
               initial={{ scale: 1 }}
-              animate={shouldReduceMotion ? { scale: 1 } : { scale: 1.04 }}
+              animate={shouldReduceMotion ? { scale: 1 } : { scale: 1.05 }}
               transition={{ duration: 6, ease: "linear" }}
               className="absolute inset-0 w-full h-full"
             >
@@ -146,60 +139,65 @@ export const HeroSection: React.FC = () => {
                 fill
                 priority
                 sizes="100vw"
-                className="object-cover object-top select-none pointer-events-none"
+                className="object-cover object-center sm:object-top select-none pointer-events-none"
               />
             </motion.div>
-            {/* Soft bottom-heavy dark overlay gradient scrim */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-transparent z-10 pointer-events-none" />
+
+            {/* Gradient scrim — heavier from bottom on mobile for text legibility */}
+            <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-t from-black/80 via-black/30 to-black/10 sm:from-black/70 sm:via-black/20 sm:to-transparent" />
           </motion.div>
         </AnimatePresence>
       </div>
 
-      {/* Preload next slide's image */}
+      {/* Preload next slide */}
       <div className="hidden">
-        <img src={nextSlide.image} alt="preload next look" />
+        <img src={nextSlide.image} alt="preload" />
       </div>
 
-      {/* Left-Aligned Editorial Text Block */}
-      <div className="relative z-20 w-full mt-auto mb-20 md:mb-24">
-        <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      {/* ─── Left-Aligned Editorial Text Block ────────────────────────────── */}
+      <div className="relative z-20 w-full mt-auto pb-20 sm:pb-24 md:pb-28">
+        <div className="w-full max-w-[1440px] mx-auto px-5 sm:px-6 md:px-8 lg:px-12">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeSlide.id}
-              initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -20 }}
+              initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: -16 }}
               animate={{ opacity: 1, x: 0 }}
-              exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: 20 }}
-              transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
-              className="flex flex-col items-start text-left max-w-xl"
+              exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, x: 16 }}
+              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+              className="flex flex-col items-start text-left max-w-xs sm:max-w-sm md:max-w-lg lg:max-w-xl"
             >
-              {/* Overline label */}
+
+              {/* Overline */}
               <motion.div
-                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 8 }}
+                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.08, duration: 0.45 }}
-                className="flex items-center gap-3 mb-5"
+                transition={{ delay: 0.06, duration: 0.4 }}
+                className="flex items-center gap-2.5 mb-3 sm:mb-4 md:mb-5"
               >
-                <span className="w-6 h-[2px] bg-white/50 inline-block" />
-                <span className="text-[10px] md:text-[11px] font-bold uppercase tracking-[0.3em] text-white/65">
+                <span className="w-5 sm:w-6 h-[2px] bg-white/50" />
+                <span className="text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.25em] sm:tracking-[0.3em] text-white/60">
                   The Collection
                 </span>
               </motion.div>
 
-              {/* Headline with left maroon accent bar */}
-              <div className="flex items-stretch gap-4 mb-5">
+              {/* Headline with maroon accent bar */}
+              <div className="flex items-stretch gap-2.5 sm:gap-3 md:gap-4 mb-3 sm:mb-4 md:mb-5">
                 <motion.div
                   initial={{ scaleY: 0 }}
                   animate={{ scaleY: 1 }}
-                  transition={{ delay: 0.15, duration: 0.4, ease: "easeOut" }}
-                  className="w-[3px] rounded-full self-stretch origin-top"
+                  transition={{ delay: 0.12, duration: 0.35, ease: "easeOut" }}
+                  className="w-[2.5px] sm:w-[3px] rounded-full self-stretch origin-top flex-shrink-0"
                   style={{ backgroundColor: "#800020" }}
                 />
                 <motion.h1
-                  initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 12 }}
+                  initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.18, duration: 0.5 }}
-                  className="font-heading font-black text-white uppercase leading-none"
-                  style={{ fontSize: "clamp(2.4rem, 6.5vw, 5.5rem)", letterSpacing: "-0.03em" }}
+                  transition={{ delay: 0.15, duration: 0.45 }}
+                  className="font-heading font-black text-white uppercase leading-[0.95]"
+                  style={{
+                    fontSize: "clamp(2rem, 8vw, 5.5rem)",
+                    letterSpacing: "-0.03em",
+                  }}
                 >
                   {activeSlide.headline}
                 </motion.h1>
@@ -207,31 +205,36 @@ export const HeroSection: React.FC = () => {
 
               {/* Subtext */}
               <motion.p
-                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 8 }}
+                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 6 }}
                 animate={{ opacity: 0.75, y: 0 }}
-                transition={{ delay: 0.26, duration: 0.5 }}
-                className="text-sm md:text-base text-white/75 mb-8 max-w-sm leading-relaxed font-light"
+                transition={{ delay: 0.24, duration: 0.45 }}
+                className="text-xs sm:text-sm md:text-base text-white/70 mb-5 sm:mb-6 md:mb-8 max-w-[260px] sm:max-w-xs md:max-w-sm leading-relaxed font-light"
               >
                 {activeSlide.subtext}
               </motion.p>
 
               {/* CTA Row */}
               <motion.div
-                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 8 }}
+                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 6 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.34, duration: 0.5 }}
-                className="flex items-center gap-5"
+                transition={{ delay: 0.32, duration: 0.45 }}
+                className="flex items-center gap-3 sm:gap-4 md:gap-5 flex-wrap"
               >
                 <Link
                   href="/products"
-                  className={buttonVariants({ variant: "default", size: "lg", className: "uppercase tracking-widest font-bold h-11 px-7 inline-flex items-center gap-2 group/btn transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl text-xs" })}
+                  className={buttonVariants({
+                    variant: "default",
+                    size: "lg",
+                    className:
+                      "uppercase tracking-widest font-bold h-10 sm:h-11 px-5 sm:px-7 inline-flex items-center gap-2 group/btn transition-all duration-300 hover:scale-105 active:scale-95 shadow-lg hover:shadow-xl text-[10px] sm:text-xs",
+                  })}
                 >
                   <span>Explore Collection</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                 </Link>
                 <Link
                   href="/products"
-                  className="text-[11px] uppercase tracking-widest text-white/55 hover:text-white transition-colors duration-300 font-semibold border-b border-white/20 hover:border-white/60 pb-0.5"
+                  className="text-[10px] sm:text-[11px] uppercase tracking-widest text-white/50 hover:text-white transition-colors duration-300 font-semibold border-b border-white/20 hover:border-white/60 pb-0.5"
                 >
                   View All
                 </Link>
@@ -241,20 +244,25 @@ export const HeroSection: React.FC = () => {
         </div>
       </div>
 
-      {/* Bottom Center: Thin Horizontal Progress Bar Indicators */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3 w-full max-w-[280px] px-margin-mobile sm:px-0">
+      {/* ─── Progress Indicators ──────────────────────────────────────────── */}
+      <div className="absolute bottom-6 sm:bottom-8 left-5 sm:left-1/2 sm:-translate-x-1/2 z-20 flex gap-2 sm:gap-3 w-auto sm:w-full sm:max-w-[280px]">
         {heroSlides.map((_, index) => {
           const isActive = index === activeIndex;
           return (
             <button
               key={index}
               onClick={() => handleSelectSlide(index)}
-              className="relative flex-grow h-[3px] bg-white/20 overflow-hidden focus:outline-none transition-opacity duration-300 rounded"
-              style={{ opacity: isActive ? 1 : 0.4 }}
+              className={`relative overflow-hidden focus:outline-none transition-all duration-300 rounded-full ${
+                isActive
+                  ? "w-10 sm:w-auto sm:flex-grow h-[3px]"
+                  : "w-6 sm:w-auto sm:flex-grow h-[3px] opacity-40 hover:opacity-60"
+              }`}
+              style={{ backgroundColor: "rgba(255,255,255,0.2)" }}
               aria-label={`Go to slide ${index + 1}`}
+              aria-current={isActive ? "true" : undefined}
             >
               <div
-                className="h-full bg-white origin-left"
+                className="h-full bg-white origin-left rounded-full"
                 style={{
                   width: `${isActive ? progress : 0}%`,
                   transition: isActive ? "none" : "width 0.3s ease",

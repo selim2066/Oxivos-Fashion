@@ -73,20 +73,20 @@ export const CategorySection: React.FC = () => {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
 
   return (
-    <section className="py-section-gap px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-t border-outline-variant/30">
+    <section className="py-12 sm:py-16 md:py-section-gap px-4 sm:px-6 md:px-8 lg:px-12 max-w-[1440px] mx-auto border-t border-outline-variant/30">
       {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 gap-3">
+      <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-6 sm:mb-8 md:mb-10 gap-2 sm:gap-3">
         <div>
-          <span className="text-label-sm font-bold uppercase tracking-widest block mb-1" style={{ color: "#800020" }}>
+          <span className="text-[10px] sm:text-label-sm font-bold uppercase tracking-widest block mb-1" style={{ color: "#800020" }}>
             Browse by Category
           </span>
-          <h2 className="font-heading text-headline-lg-mobile md:text-headline-lg text-primary uppercase tracking-tight">
+          <h2 className="font-heading text-xl sm:text-2xl md:text-headline-lg text-primary uppercase tracking-tight font-black">
             Shop the Collection
           </h2>
         </div>
         <Link
           href="/products"
-          className="text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 group self-start md:self-auto"
+          className="text-[10px] sm:text-label-sm uppercase tracking-widest text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1 group self-start sm:self-auto"
         >
           View All
           <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
@@ -95,7 +95,7 @@ export const CategorySection: React.FC = () => {
 
       {/* Grid */}
       <motion.div
-        className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4"
+        className="grid grid-cols-2 md:grid-cols-4 gap-2.5 sm:gap-3 md:gap-4"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -157,15 +157,15 @@ interface CardProps {
 
 const CategoryCard: React.FC<CardProps> = ({ category, isHovered, tall, wide }) => {
   const height = tall
-    ? "h-[340px] md:h-full md:min-h-[460px]"
+    ? "h-[240px] sm:h-[340px] md:h-full md:min-h-[460px]"
     : wide
-    ? "h-[180px] md:h-[210px]"
-    : "h-[200px] md:h-[220px]";
+    ? "h-[140px] sm:h-[180px] md:h-[210px]"
+    : "h-[150px] sm:h-[200px] md:h-[220px]";
 
   return (
     <Link
       href={category.href}
-      className={`relative group block w-full ${height} overflow-hidden rounded-2xl bg-black`}
+      className={`relative group block w-full ${height} overflow-hidden rounded-xl sm:rounded-2xl bg-black`}
       aria-label={`Shop ${category.label}`}
     >
       {/* Background Image */}
@@ -186,10 +186,10 @@ const CategoryCard: React.FC<CardProps> = ({ category, isHovered, tall, wide }) 
       <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent z-10 pointer-events-none" />
 
       {/* Content */}
-      <div className="absolute inset-0 z-20 flex flex-col justify-end p-4 md:p-5">
+      <div className="absolute inset-0 z-20 flex flex-col justify-end p-3 sm:p-4 md:p-5">
         {/* Count pill */}
         <motion.span
-          className="self-start text-[9px] md:text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full mb-2 border border-white/20 backdrop-blur-sm"
+          className="self-start text-[8px] sm:text-[9px] md:text-[10px] font-bold uppercase tracking-widest px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full mb-1.5 sm:mb-2 border border-white/20 backdrop-blur-sm"
           style={{ backgroundColor: "rgba(128,0,32,0.75)", color: "#fff" }}
           animate={{ opacity: isHovered ? 1 : 0.85 }}
         >
@@ -197,13 +197,13 @@ const CategoryCard: React.FC<CardProps> = ({ category, isHovered, tall, wide }) 
         </motion.span>
 
         {/* Label */}
-        <h3 className="font-heading text-white uppercase tracking-tight leading-none text-xl md:text-2xl font-black">
+        <h3 className="font-heading text-white uppercase tracking-tight leading-none text-base sm:text-xl md:text-2xl font-black">
           {category.label}
         </h3>
 
         {/* Description — slides in on hover */}
         <motion.p
-          className="text-white/70 text-[11px] md:text-xs mt-1 leading-snug"
+          className="text-white/70 text-[10px] sm:text-[11px] md:text-xs mt-0.5 sm:mt-1 leading-snug"
           initial={false}
           animate={{
             opacity: isHovered ? 1 : 0,
@@ -217,7 +217,7 @@ const CategoryCard: React.FC<CardProps> = ({ category, isHovered, tall, wide }) 
 
       {/* Arrow icon — top right */}
       <motion.div
-        className="absolute top-4 right-4 z-20 w-8 h-8 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center"
+        className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 flex items-center justify-center"
         animate={{
           opacity: isHovered ? 1 : 0,
           scale: isHovered ? 1 : 0.75,
