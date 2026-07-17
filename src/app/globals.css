@@ -37,6 +37,7 @@
 
   --color-elevate-primary: #000000;
   --color-on-elevate-primary: #ffffff;
+  --color-on-primary: var(--color-on-elevate-primary);
   --color-primary-container: #1c1b1b;
   --color-on-primary-container: #858383;
   --color-inverse-primary: #c9c6c5;
