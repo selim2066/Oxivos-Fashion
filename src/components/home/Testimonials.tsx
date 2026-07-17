@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star } from "lucide-react";
 
@@ -95,6 +95,15 @@ function StarRating({ rating }: { rating: number }) {
 export function Testimonials() {
   const [activeIndex, setActiveIndex] = useState(0);
   const active = testimonials[activeIndex];
+
+  // Auto-play interval that resets when activeIndex changes (manual click)
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveIndex((prev) => (prev + 1) % testimonials.length);
+    }, 6000); // circular transition every 6 seconds
+
+    return () => clearInterval(timer);
+  }, [activeIndex]);
 
   return (
     <section className="py-16 md:py-20 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto border-t border-outline-variant/30">
