@@ -231,11 +231,16 @@
   --spacing-container-max: 1280px;
 
   /* ── Border Radius (from DESIGN.md) ──────────────────────────── */
-  --radius-sm: 0.125rem;     /* 2px  */
-  --radius-DEFAULT: 0.25rem; /* 4px — the brand standard */
-  --radius-md: 0.375rem;     /* 6px  */
-  --radius-lg: 0.5rem;       /* 8px  */
-  --radius-xl: 0.75rem;      /* 12px */
+  --radius-sm: 0.125rem;
+  /* 2px  */
+  --radius-DEFAULT: 0.25rem;
+  /* 4px — the brand standard */
+  --radius-md: 0.375rem;
+  /* 6px  */
+  --radius-lg: 0.5rem;
+  /* 8px  */
+  --radius-xl: 0.75rem;
+  /* 12px */
   --radius-full: 9999px;
 
   /* ── Typography Scale (fontSize utilities) ───────────────────── */
@@ -374,13 +379,16 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-elevate-background text-on-surface font-sans antialiased;
   }
+
   html {
     @apply scroll-smooth;
     color-scheme: light dark;
   }
+
   select option {
     background-color: var(--color-surface-container);
     color: var(--color-on-surface);
@@ -390,18 +398,23 @@
   [data-slot="button"][data-variant="default"] {
     color: var(--color-on-primary) !important;
   }
+
   [data-slot="button"][data-variant="default"] svg {
     color: var(--color-on-primary) !important;
   }
+
   [data-slot="button"][data-variant="secondary"] {
     color: var(--color-on-secondary) !important;
   }
+
   [data-slot="button"][data-variant="secondary"] svg {
     color: var(--color-on-secondary) !important;
   }
+
   [data-slot="button"][data-variant="destructive"] {
     color: var(--color-on-elevate-error) !important;
   }
+
   [data-slot="button"][data-variant="destructive"] svg {
     color: var(--color-on-elevate-error) !important;
   }

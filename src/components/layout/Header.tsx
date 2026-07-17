@@ -120,11 +120,10 @@ export const Header: React.FC = () => {
 
       {/* ─── Main Navbar ──────────────────────────────────────────────────────── */}
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ease-in-out ${
-          navActive
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ease-in-out ${navActive
             ? "bg-surface/92 backdrop-blur-xl shadow-sm border-b border-outline-variant/20 py-2.5"
             : "bg-transparent py-4 border-b border-transparent"
-        }`}
+          }`}
       >
         <div className="flex items-center justify-between w-full px-4 sm:px-6 md:px-8 lg:px-12 max-w-[1440px] mx-auto h-12">
 
@@ -133,9 +132,8 @@ export const Header: React.FC = () => {
             {/* Hamburger — mobile only */}
             <button
               onClick={() => setIsMobileMenuOpen(true)}
-              className={`md:hidden flex items-center justify-center w-9 h-9 rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
-                isTransparent ? "text-white hover:bg-white/10" : "text-primary hover:bg-surface-container"
-              }`}
+              className={`md:hidden flex items-center justify-center w-9 h-9 rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${isTransparent ? "text-white hover:bg-white/10" : "text-primary hover:bg-surface-container"
+                }`}
               aria-label="Open navigation menu"
               aria-expanded={isMobileMenuOpen}
             >
@@ -145,9 +143,8 @@ export const Header: React.FC = () => {
             {/* Logo */}
             <Link
               href="/"
-              className={`flex-shrink-0 hover:opacity-80 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded ${
-                isTransparent ? "text-white" : "text-primary"
-              }`}
+              className={`flex-shrink-0 hover:opacity-80 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded ${isTransparent ? "text-white" : "text-primary"
+                }`}
               aria-label="Oxivos Fashion home"
             >
               <BrandMark className="text-base sm:text-lg md:text-xl" />
@@ -162,15 +159,14 @@ export const Header: React.FC = () => {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className={`relative px-3 py-1.5 text-[11px] lg:text-xs font-bold uppercase tracking-widest rounded transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
-                    active
+                  className={`relative px-3 py-1.5 text-[11px] lg:text-xs font-bold uppercase tracking-widest rounded transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${active
                       ? isTransparent
                         ? "text-white"
                         : "text-primary"
                       : isTransparent
-                      ? "text-white/70 hover:text-white"
-                      : "text-on-surface-variant hover:text-primary"
-                  }`}
+                        ? "text-white/70 hover:text-white"
+                        : "text-on-surface-variant hover:text-primary"
+                    }`}
                 >
                   {link.label}
                   {/* Active underline dot */}
@@ -192,9 +188,8 @@ export const Header: React.FC = () => {
             {/* Search */}
             <button
               onClick={() => setIsSearchOpen(true)}
-              className={`flex items-center justify-center w-9 h-9 rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
-                isTransparent ? "hover:bg-white/10" : "hover:bg-surface-container"
-              }`}
+              className={`flex items-center justify-center w-9 h-9 rounded-lg transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${isTransparent ? "hover:bg-white/10" : "hover:bg-surface-container"
+                }`}
               aria-label="Search"
             >
               <Search className="w-4.5 h-4.5" />
@@ -203,9 +198,8 @@ export const Header: React.FC = () => {
             {/* Wishlist — hidden on xs */}
             <Link
               href="/products?wishlist=true"
-              className={`hidden sm:flex items-center justify-center w-9 h-9 rounded-lg relative transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
-                isTransparent ? "hover:bg-white/10" : "hover:bg-surface-container"
-              }`}
+              className={`hidden sm:flex items-center justify-center w-9 h-9 rounded-lg relative transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${isTransparent ? "hover:bg-white/10" : "hover:bg-surface-container"
+                }`}
               aria-label="Wishlist"
             >
               <Heart className="w-4.5 h-4.5" />
@@ -219,9 +213,8 @@ export const Header: React.FC = () => {
             {/* Cart */}
             <Link
               href="/cart"
-              className={`flex items-center justify-center w-9 h-9 rounded-lg relative transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
-                isTransparent ? "hover:bg-white/10" : "hover:bg-surface-container"
-              }`}
+              className={`flex items-center justify-center w-9 h-9 rounded-lg relative transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${isTransparent ? "hover:bg-white/10" : "hover:bg-surface-container"
+                }`}
               aria-label="Cart"
             >
               <ShoppingBag className="w-4.5 h-4.5" />
@@ -289,11 +282,10 @@ export const Header: React.FC = () => {
                       >
                         <Link
                           href={link.href}
-                          className={`flex items-center justify-between px-4 py-3.5 rounded-xl text-sm font-bold uppercase tracking-widest transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${
-                            active
+                          className={`flex items-center justify-between px-4 py-3.5 rounded-xl text-sm font-bold uppercase tracking-widest transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${active
                               ? "text-primary"
                               : "text-on-surface-variant hover:text-primary hover:bg-surface-container"
-                          }`}
+                            }`}
                           style={active ? { borderLeft: "3px solid #800020", paddingLeft: "13px" } : {}}
                         >
                           {link.label}
