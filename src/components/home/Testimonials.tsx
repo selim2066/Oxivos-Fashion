@@ -22,10 +22,8 @@ const testimonials: Testimonial[] = [
     id: 1,
     name: "Rafiul Islam",
     role: "Verified Buyer, Dhaka",
-    image:
-      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=600&h=800&q=85&auto=format&fit=crop&crop=top",
-    avatarImage:
-      "https://images.unsplash.com/photo-1552374196-1ab2a1c593e8?w=120&h=120&q=80&auto=format&fit=crop&crop=top",
+    image: "/assets/testimonial1.png",
+    avatarImage: "/assets/testimonial1.png",
     headline: "A silhouette that actually fits the way I move.",
     quote:
       "I've worn a lot of elevated basics, but nothing has come close to how these pieces sit on the body. The Oxford shirt in Obsidian — the drape is precise without being stiff. I wore it for a full twelve-hour day in Dhaka traffic and meetings, and it still looked composed. The stitching at the collar is immaculate. Packaging was clean, delivery arrived ahead of the estimated date. I'll be ordering the linen version next.",
@@ -36,9 +34,9 @@ const testimonials: Testimonial[] = [
     name: "Arif Chowdhury",
     role: "Verified Buyer, Chittagong",
     image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=800&q=85&auto=format&fit=crop&crop=top",
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=600&h=800&q=85&auto=format&fit=crop&crop=top",
     avatarImage:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=120&h=120&q=80&auto=format&fit=crop&crop=top",
+      "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=120&h=120&q=80&auto=format&fit=crop&crop=top",
     headline: "Exactly what the product page promised — no surprises.",
     quote:
       "Too many brands photograph fabric under perfect studio light and then ship you something that feels off. Not here. The Slim Suit in Charcoal looks exactly as it does in the images — the texture is subtle, the lining is breathable, and the shoulders don't need a tailor's adjustment out of the box. I wore it to a corporate function and received multiple compliments on the cut. My only note: the trouser waistband could have an extra button option at the half-inch. Minor thing.",
@@ -49,9 +47,9 @@ const testimonials: Testimonial[] = [
     name: "Shakil Ahmed",
     role: "Verified Buyer, Sylhet",
     image:
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&h=800&q=85&auto=format&fit=crop&crop=top",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&q=85&auto=format&fit=crop&crop=top",
     avatarImage:
-      "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=120&h=120&q=80&auto=format&fit=crop&crop=top",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&h=120&q=80&auto=format&fit=crop&crop=top",
     headline: "Understated, precise, and built to last more than a season.",
     quote:
       "What I appreciate most is the restraint in the design. No unnecessary hardware, no trend-chasing embellishments — just a very clean silhouette in a fabric that photographs beautifully and holds its structure through washing. I ordered the Minimalist Coat in Sand and wore it through three weeks of travel. It packed well, released wrinkles quickly with steam, and the zipper glide stayed smooth. This is the kind of piece you keep for years.",
@@ -62,9 +60,9 @@ const testimonials: Testimonial[] = [
     name: "Tariq Hossain",
     role: "Verified Buyer, Rajshahi",
     image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&h=800&q=85&auto=format&fit=crop&crop=top",
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=600&h=800&q=85&auto=format&fit=crop&crop=top",
     avatarImage:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&h=120&q=80&auto=format&fit=crop&crop=top",
+      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=120&h=120&q=80&auto=format&fit=crop&crop=top",
     headline: "Worth every taka — the quality speaks before I do.",
     quote:
       "I was skeptical ordering a suit online at this price point. The size guide was accurate — I measured exactly as instructed and my order fit without alteration. The jacket construction is structured but not rigid, with a clean roll on the lapel. Fabric is mid-weight, appropriate for both air-conditioned interiors and outdoor events. Delivery was discreet — the garment arrived pressed inside a protective outer bag. Customer service responded within a couple of hours when I had a sizing question before purchase.",
