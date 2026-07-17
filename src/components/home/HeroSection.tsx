@@ -14,8 +14,6 @@ interface HeroSlide {
   image: string;
   headline: string;
   subtext: string;
-  edition: string;
-  city: string;
 }
 
 const heroSlides: HeroSlide[] = [
@@ -24,24 +22,18 @@ const heroSlides: HeroSlide[] = [
     image: "https://images.unsplash.com/photo-1687103445012-083ef9ab6d80?q=80&w=1600&auto=format&fit=crop",
     headline: "NOIR ATELIER",
     subtext: "Where shadow meets silhouette — a study in architectural precision.",
-    edition: "EDITION — 01",
-    city: "Paris",
   },
   {
     id: 2,
     image: "https://images.unsplash.com/photo-1614805104608-6402e52d0dd6?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     headline: "ELEVATED CODES",
     subtext: "Technical fabrics engineered for effortless modern movement.",
-    edition: "EDITION — 02",
-    city: "Milan",
   },
   {
     id: 3,
     image: "https://images.unsplash.com/photo-1718351041906-d1086f502f8a?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     headline: "TRANSIT LAYERS",
     subtext: "A curated edit of refined silhouettes, built for transitional climates.",
-    edition: "EDITION — 03",
-    city: "Tokyo",
   },
 ];
 
@@ -130,17 +122,6 @@ export const HeroSection: React.FC = () => {
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
     >
-      {/* Top Header Bar inside Hero */}
-      <div className="absolute top-0 left-0 w-full p-6 flex justify-between items-center z-30 text-white pointer-events-none">
-        <span className="font-mono text-[10px] tracking-widest uppercase opacity-70">
-          {activeSlide.edition}
-        </span>
-        <div className="hidden md:flex items-center space-x-3 text-[10px] tracking-widest uppercase font-semibold pointer-events-auto">
-          <Link href="/products" className="hover:opacity-70 transition-opacity">Collections</Link>
-          <span className="opacity-40">/</span>
-          <Link href="/products" className="hover:opacity-70 transition-opacity">Lookbook</Link>
-        </div>
-      </div>
 
       {/* Carousel Background Images (Crossfade & Ken Burns Zoom) */}
       <div className="absolute inset-0 z-0 w-full h-full">
