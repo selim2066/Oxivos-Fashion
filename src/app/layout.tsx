@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import React, { Suspense } from "react";
 import "./globals.css";
 import { CartProvider } from "../context/CartContext";
 import { WishlistProvider } from "../context/WishlistContext";
@@ -48,7 +49,9 @@ export default function RootLayout({
           >
             <CartProvider>
               <WishlistProvider>
-                <Header />
+                <Suspense fallback={<div className="h-16 bg-surface" />}>
+                  <Header />
+                </Suspense>
                 <div className="flex-grow flex flex-col">{children}</div>
                 <Footer />
               </WishlistProvider>

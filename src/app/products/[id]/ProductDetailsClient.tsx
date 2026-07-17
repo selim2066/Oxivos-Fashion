@@ -79,7 +79,7 @@ export const ProductDetailsClient: React.FC<ProductDetailsClientProps> = ({ prod
             <img
               src={selectedImage}
               alt={product.name}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out mix-blend-multiply"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out mix-blend-multiply dark:mix-blend-normal"
             />
           </div>
 
@@ -98,7 +98,7 @@ export const ProductDetailsClient: React.FC<ProductDetailsClientProps> = ({ prod
                         : "border-transparent hover:border-outline-variant"
                     }`}
                   >
-                    <img src={imgUrl} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover mix-blend-multiply" />
+                    <img src={imgUrl} alt={`Thumbnail ${idx + 1}`} className="w-full h-full object-cover mix-blend-multiply dark:mix-blend-normal" />
                   </button>
                 );
               })}

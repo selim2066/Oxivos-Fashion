@@ -379,6 +379,11 @@
   }
   html {
     @apply scroll-smooth;
+    color-scheme: light dark;
+  }
+  select option {
+    background-color: var(--color-surface-container);
+    color: var(--color-on-surface);
   }
 
   /* Force theme-aware text on filled button variants regardless of Tailwind class order */

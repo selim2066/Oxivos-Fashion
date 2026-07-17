@@ -74,10 +74,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             </div>
           )}
 
-          {/* Wishlist Button (fades in on hover) */}
+          {/* Wishlist Button (fades in on hover on desktop, always visible on mobile) */}
           <button
             onClick={() => toggleWishlist(product)}
-            className="absolute top-4 right-4 z-20 bg-surface-container-lowest/90 backdrop-blur text-primary p-2 rounded-full hover:bg-primary hover:text-on-primary transition-all duration-300 shadow-sm opacity-0 group-hover:opacity-100"
+            className="absolute top-4 right-4 z-20 bg-surface-container-lowest/90 backdrop-blur text-primary p-2 rounded-full hover:bg-primary hover:text-on-primary transition-all duration-300 shadow-sm opacity-100 md:opacity-0 md:group-hover:opacity-100"
             aria-label={isFavorite ? "Remove from wishlist" : "Add to wishlist"}
           >
             <Heart className={`w-4 h-4 ${isFavorite ? "fill-primary text-primary" : ""}`} />
@@ -87,7 +87,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           <img
             src={product.image}
             alt={product.name}
-            className={`object-cover w-full h-full mix-blend-multiply opacity-90 transition-transform duration-700 ease-out group-hover:scale-105 ${
+            className={`object-cover w-full h-full mix-blend-multiply dark:mix-blend-normal opacity-90 transition-transform duration-700 ease-out group-hover:scale-105 ${
               !product.inStock ? "opacity-50" : ""
             }`}
           />
@@ -159,7 +159,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               <img
                 src={product.image}
                 alt={product.name}
-                className="w-full h-full object-cover mix-blend-multiply"
+                className="w-full h-full object-cover mix-blend-multiply dark:mix-blend-normal"
               />
             </div>
 

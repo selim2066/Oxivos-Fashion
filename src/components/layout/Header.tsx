@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Search, User, ShoppingBag, Heart, Menu, X, ArrowRight } from "lucide-react";
 import { useCart } from "../../context/CartContext";
 import { useWishlist } from "../../context/WishlistContext";
@@ -15,6 +15,10 @@ export const Header: React.FC = () => {
   const { wishlistItems } = useWishlist();
   const pathname = usePathname();
   const router = useRouter();
+  const searchParams = useSearchParams();
+  
+  const currentCategory = searchParams.get("category") || "";
+  const isWishlist = searchParams.get("wishlist") === "true";
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -96,20 +100,32 @@ export const Header: React.FC = () => {
           {/* Brand */}
           <Link
             href="/"
-            className="text-headline-sm md:text-headline-md font-extrabold tracking-tighter text-primary hover:opacity-75 transition-opacity"
+            className="text-headline-sm md:text-headline-md font-extrabold tracking-tighter text-primary hover:opacity-75 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded"
           >
             OXIVOS FASHION
           </Link>
 
-          {/* Desktop Navigation Links */}
           <div className="hidden md:flex space-x-unit-lg items-center">
             {navLinks.map((link) => {
-              const isActive = pathname === link.href;
+              const url = new URL(link.href, "http://localhost");
+              const linkCategory = url.searchParams.get("category") || "";
+              const linkWishlist = url.searchParams.get("wishlist") === "true";
+              const isBaseProducts = link.href === "/products";
+
+              let isActive = false;
+              if (isBaseProducts) {
+                isActive = pathname === "/products" && !currentCategory && !isWishlist;
+              } else {
+                isActive = pathname === url.pathname && 
+                  (linkCategory === currentCategory) && 
+                  (linkWishlist === isWishlist);
+              }
+
               return (
                 <Link
                   key={link.label}
                   href={link.href}
-                  className={`font-label-md text-label-md uppercase tracking-wider transition-all duration-300 ${
+                  className={`font-label-md text-label-md uppercase tracking-wider transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded px-1 ${
                     isActive
                       ? "text-primary border-b border-primary pb-1"
                       : "text-on-surface-variant hover:text-primary hover:opacity-70"
@@ -121,13 +137,12 @@ export const Header: React.FC = () => {
             })}
           </div>
 
-          {/* Trailing Icons */}
           <div className="flex items-center space-x-unit-md text-primary">
             <ThemeToggle />
 
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="hover:opacity-75 transition-opacity duration-300 p-1"
+              className="hover:opacity-75 transition-opacity duration-300 p-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full"
               aria-label="Search products"
             >
               <Search className="w-5 h-5" />
@@ -136,7 +151,7 @@ export const Header: React.FC = () => {
             {/* Wishlist Link with Badge */}
             <Link
               href="/products?wishlist=true"
-              className="hover:opacity-75 transition-opacity duration-300 p-1 relative"
+              className="hover:opacity-75 transition-opacity duration-300 p-1 relative focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full"
               aria-label="View wishlist"
             >
               <Heart className="w-5 h-5" />
@@ -153,7 +168,7 @@ export const Header: React.FC = () => {
             {/* Cart Link with Badge */}
             <Link
               href="/cart"
-              className="hover:opacity-75 transition-opacity duration-300 p-1 relative"
+              className="hover:opacity-75 transition-opacity duration-300 p-1 relative focus:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-full"
               aria-label="View cart"
             >
               <ShoppingBag className="w-5 h-5" />
@@ -188,16 +203,36 @@ export const Header: React.FC = () => {
                 <X className="w-6 h-6" />
               </button>
             </div>
-            <div className="flex flex-col space-y-6">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  className="font-label-md text-headline-sm uppercase tracking-wider text-primary border-b border-outline-variant/30 pb-2 hover:opacity-70 transition-opacity"
-                >
-                  {link.label}
-                </Link>
-              ))}
+             <div className="flex flex-col space-y-6">
+              {navLinks.map((link) => {
+                const url = new URL(link.href, "http://localhost");
+                const linkCategory = url.searchParams.get("category") || "";
+                const linkWishlist = url.searchParams.get("wishlist") === "true";
+                const isBaseProducts = link.href === "/products";
+
+                let isActive = false;
+                if (isBaseProducts) {
+                  isActive = pathname === "/products" && !currentCategory && !isWishlist;
+                } else {
+                  isActive = pathname === url.pathname && 
+                    (linkCategory === currentCategory) && 
+                    (linkWishlist === isWishlist);
+                }
+
+                return (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    className={`font-label-md text-headline-sm uppercase tracking-wider border-b pb-2 hover:opacity-70 transition-opacity focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 rounded ${
+                      isActive
+                        ? "text-primary border-primary font-bold"
+                        : "text-on-surface-variant border-outline-variant/30"
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
             </div>
             <div className="mt-auto pt-6 border-t border-outline-variant/30 flex items-center gap-4 text-on-surface-variant">
               <User className="w-5 h-5" />
@@ -246,11 +281,11 @@ export const Header: React.FC = () => {
                     href={`/products/${product.id}`}
                     className="flex gap-4 p-2 hover:bg-surface-container rounded transition-colors group"
                   >
-                    <div className="w-16 h-20 bg-card-bg rounded overflow-hidden flex-shrink-0">
+                     <div className="w-16 h-20 bg-card-bg rounded overflow-hidden flex-shrink-0">
                       <img
                         src={product.image}
                         alt={product.name}
-                        className="w-full h-full object-cover mix-blend-multiply"
+                        className="w-full h-full object-cover mix-blend-multiply dark:mix-blend-normal"
                       />
                     </div>
                     <div className="flex flex-col justify-center">

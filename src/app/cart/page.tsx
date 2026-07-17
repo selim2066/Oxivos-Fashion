@@ -75,7 +75,7 @@ export default function CartPage() {
                 <img
                   src={item.product.image}
                   alt={item.product.name}
-                  className="w-full h-full object-cover mix-blend-multiply"
+                  className="w-full h-full object-cover mix-blend-multiply dark:mix-blend-normal"
                 />
               </div>
 
