@@ -6,9 +6,9 @@ export const products: Product[] = [
     name: "Classic Tailored Blazer",
     category: "Men",
     price: 260,
-    image: "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1619603364904-c0498317e145?w=800&auto=format&fit=crop&q=80",
     images: [
-      "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1619603364904-c0498317e145?w=800&auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1618886614638-80e3c103d31a?w=800&auto=format&fit=crop&q=80"
     ],
     rating: 4.9,
@@ -56,9 +56,9 @@ export const products: Product[] = [
     name: "Articulated Trek Trousers",
     category: "Men",
     price: 180,
-    image: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1578681994506-b8f463449011?w=800&auto=format&fit=crop&q=80",
     images: [
-      "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1578681994506-b8f463449011?w=800&auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=800&auto=format&fit=crop&q=80"
     ],
     rating: 4.7,
@@ -77,39 +77,86 @@ export const products: Product[] = [
     materials: "90% Nylon, 10% Spandex. Machine wash cold. Do not tumble dry."
   },
   {
-    id: 4,
-    name: "Structured Trench Coat",
-    category: "Women",
-    price: 295,
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&auto=format&fit=crop&q=80&crop=faces",
+    id: 9,
+    name: "Kids Everyday Jogger",
+    category: "Kids",
+    price: 65,
+    image: "https://images.unsplash.com/photo-1529756148791-fbca69bfe693?w=800&auto=format&fit=crop&q=80",
     images: [
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800&auto=format&fit=crop&q=80&crop=faces",
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=80&crop=faces"
+      "https://images.unsplash.com/photo-1529756148791-fbca69bfe693?w=800&auto=format&fit=crop&q=80"
+    ],
+    rating: 4.6,
+    colors: ["Obsidian", "Olive"],
+    sizes: ["4-5Y", "6-7Y", "8-9Y", "10-11Y"],
+    inStock: true,
+    description: "Durable, high-stretch knit joggers with reinforced knees. Ideal for everyday transit, school, and outdoor adventure.",
+    subtitle: "Obsidian / Reinforced Knit",
+    details: [
+      "High-stretch organic cotton interlock knit",
+      "Double-layered reinforced knee panels",
+      "Elastic waistband with interior flat drawstring",
+      "Deep utility pockets for small treasures",
+      "Ribbed ankle cuffs for snug fit"
+    ],
+    materials: "95% Cotton, 5% Elastane. Machine wash hot with similar colors. Tumble dry medium."
+  },
+  {
+    id: 7,
+    name: "Kids Tech Windbreaker",
+    category: "Kids",
+    price: 95,
+    image: "https://images.unsplash.com/photo-1578897367107-2828e351c8a8?w=800&auto=format&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-1578897367107-2828e351c8a8?w=800&auto=format&fit=crop&q=80"
     ],
     rating: 4.8,
-    colors: ["Sand", "Black"],
-    sizes: ["XS", "S", "M", "L"],
+    colors: ["Sky Blue", "Olive", "Black"],
+    sizes: ["4-5Y", "6-7Y", "8-9Y", "10-11Y"],
     inStock: true,
-    description: "A contemporary reimagining of the classic double-breasted trench. Tailored from a wind-proof organic cotton gabardine with an adjustable storm flap.",
-    subtitle: "Sand / Cotton Gabardine",
+    description: "A lightweight technical shell designed for active play. Crafted from tear-resistant ripstop nylon with a water-repellent protective layer.",
+    subtitle: "Sky Blue / Ripstop Nylon",
     details: [
-      "Windproof organic cotton gabardine",
-      "Double-breasted front button design",
-      "Detachable waist belt with custom buckle",
-      "Deep side-welt utility pockets",
-      "Adjustable buttoned cuffs"
+      "Durable water-repellent (DWR) finish",
+      "Tear-resistant ripstop nylon fabric",
+      "Elastic hood and cuffs to keep wind out",
+      "Zippered hand pockets",
+      "Reflective safety striping on back"
     ],
-    materials: "100% Organic Cotton Gabardine. Dry clean only."
+    materials: "100% Recycled Nylon ripstop. Machine wash cold. Tumble dry low."
+  },
+  {
+    id: 8,
+    name: "Kids Cotton Pullover",
+    category: "Kids",
+    price: 75,
+    image: "https://images.unsplash.com/photo-1578897367002-2873f26520fd?w=800&auto=format&fit=crop&q=80",
+    images: [
+      "https://images.unsplash.com/photo-157889737002-2873f26520fd?w=800&auto=format&fit=crop&q=80"
+    ],
+    rating: 4.5,
+    colors: ["Charcoal", "Cream"],
+    sizes: ["4-5Y", "6-7Y", "8-9Y", "10-11Y"],
+    inStock: true,
+    description: "A soft, structured crewneck pullover made from certified organic cotton fleece. Features flatlock seams for sensory comfort during play.",
+    subtitle: "Charcoal / Organic Cotton Fleece",
+    details: [
+      "100% organic cotton French terry",
+      "Ultra-soft interior fleece brushed finish",
+      "Ribbed crewneck and wide elastic cuffs",
+      "Flatlock stitching avoids skin friction",
+      "Pre-washed to resist shrinkage"
+    ],
+    materials: "100% Organic Cotton. Wash inside out with similar colors. Tumble dry low."
   },
   {
     id: 5,
     name: "Aero Tech Longsleeve",
     category: "Women",
     price: 90,
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&auto=format&fit=crop&q=80&crop=faces",
+    image: "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&auto=format&fit=crop&q=80",
     images: [
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&auto=format&fit=crop&q=80&crop=faces",
-      "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=800&auto=format&fit=crop&q=80&crop=faces"
+      "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=800&auto=format&fit=crop&q=80"
     ],
     rating: 4.6,
     colors: ["Cream", "Obsidian"],
@@ -131,10 +178,10 @@ export const products: Product[] = [
     name: "Relaxed Linen Trouser",
     category: "Women",
     price: 130,
-    image: "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=800&auto=format&fit=crop&q=80",
+    image: "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&auto=format&fit=crop&q=80",
     images: [
-      "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=800&auto=format&fit=crop&q=80"
+      "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=800&auto=format&fit=crop&q=80"
     ],
     rating: 4.4,
     colors: ["Cloud White", "Sand"],
@@ -152,78 +199,29 @@ export const products: Product[] = [
     materials: "100% Linen. Machine wash cold on delicate. Lay flat to dry."
   },
   {
-    id: 7,
-    name: "Kids Tech Windbreaker",
-    category: "Kids",
-    price: 95,
-    image: "https://images.unsplash.com/photo-1519457431-44ccd64a579b?w=800&auto=format&fit=crop&q=80",
+    id: 4,
+    name: "Structured Trench Coat",
+    category: "Women",
+    price: 295,
+    image: "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&auto=format&fit=crop&q=80",
     images: [
-      "https://images.unsplash.com/photo-1519457431-44ccd64a579b?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?w=800&auto=format&fit=crop&q=80"
-    ],
-    rating: 4.7,
-    colors: ["Sky Blue", "Olive", "Black"],
-    sizes: ["4-5Y", "6-7Y", "8-9Y", "10-11Y"],
-    inStock: true,
-    description: "A lightweight technical shell designed for active play. Crafted from tear-resistant ripstop nylon with a water-repellent protective layer.",
-    subtitle: "Sky Blue / Ripstop Nylon",
-    details: [
-      "Durable water-repellent (DWR) finish",
-      "Tear-resistant ripstop nylon fabric",
-      "Elastic hood and cuffs to keep wind out",
-      "Zippered hand pockets",
-      "Reflective safety striping on back"
-    ],
-    materials: "100% Recycled Nylon ripstop. Machine wash cold. Tumble dry low."
-  },
-  {
-    id: 8,
-    name: "Kids Cotton Pullover",
-    category: "Kids",
-    price: 75,
-    image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800&auto=format&fit=crop&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1607990283143-e81e7a2c93ab?w=800&auto=format&fit=crop&q=80"
-    ],
-    rating: 4.5,
-    colors: ["Charcoal", "Cream"],
-    sizes: ["4-5Y", "6-7Y", "8-9Y", "10-11Y"],
-    inStock: true,
-    description: "A soft, structured crewneck pullover made from certified organic cotton fleece. Features flatlock seams for sensory comfort during play.",
-    subtitle: "Charcoal / Organic Cotton Fleece",
-    details: [
-      "100% organic cotton French terry",
-      "Ultra-soft interior fleece brushed finish",
-      "Ribbed crewneck and wide elastic cuffs",
-      "Flatlock stitching avoids skin friction",
-      "Pre-washed to resist shrinkage"
-    ],
-    materials: "100% Organic Cotton. Wash inside out with similar colors. Tumble dry low."
-  },
-  {
-    id: 9,
-    name: "Kids Everyday Jogger",
-    category: "Kids",
-    price: 65,
-    image: "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=800&auto=format&fit=crop&q=80",
-    images: [
-      "https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?w=800&auto=format&fit=crop&q=80"
+      "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=800&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1544022613-e87ca75a784a?w=800&auto=format&fit=crop&q=80"
     ],
     rating: 4.6,
-    colors: ["Obsidian", "Olive"],
-    sizes: ["4-5Y", "6-7Y", "8-9Y", "10-11Y"],
+    colors: ["Sand", "Black"],
+    sizes: ["XS", "S", "M", "L"],
     inStock: true,
-    description: "Durable, high-stretch knit joggers with reinforced knees. Ideal for everyday transit, school, and outdoor adventure.",
-    subtitle: "Obsidian / Reinforced Knit",
+    description: "A contemporary reimagining of the classic double-breasted trench. Tailored from a wind-proof organic cotton gabardine with an adjustable storm flap.",
+    subtitle: "Sand / Cotton Gabardine",
     details: [
-      "High-stretch organic cotton interlock knit",
-      "Double-layered reinforced knee panels",
-      "Elastic waistband with interior flat drawstring",
-      "Deep utility pockets for small treasures",
-      "Ribbed ankle cuffs for snug fit"
+      "Windproof organic cotton gabardine",
+      "Double-breasted front button design",
+      "Detachable waist belt with custom buckle",
+      "Deep side-welt utility pockets",
+      "Adjustable buttoned cuffs"
     ],
-    materials: "95% Cotton, 5% Elastane. Machine wash hot with similar colors. Tumble dry medium."
+    materials: "100% Organic Cotton Gabardine. Dry clean only."
   },
   {
     id: 10,

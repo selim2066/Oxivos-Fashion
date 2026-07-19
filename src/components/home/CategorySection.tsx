@@ -28,7 +28,7 @@ const categories: Category[] = [
     label: "Women",
     href: "/products?category=Women",
     image:
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=900&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=900&auto=format&fit=crop&q=80",
     count: "58 Styles",
     description: "Effortless elegance, every season",
     span: "normal",
@@ -37,7 +37,7 @@ const categories: Category[] = [
     label: "Kids",
     href: "/products?category=Kids",
     image:
-      "https://images.unsplash.com/photo-1622290291468-a28f7a7dc6a8?w=900&auto=format&fit=crop&q=80",
+      "https://plus.unsplash.com/premium_photo-1678559460700-8a1d42ce8239?w=900&auto=format&fit=crop&q=80",
     count: "34 Styles",
     description: "Playful and practical everyday wear",
     span: "normal",

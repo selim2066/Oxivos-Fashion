@@ -83,6 +83,7 @@ export const Header: React.FC = () => {
   };
 
   const navLinks = [
+    { label: "Home", href: "/" },
     { label: "Shop", href: "/products" },
     { label: "Men", href: "/products?category=Men" },
     { label: "Women", href: "/products?category=Women" },
@@ -91,6 +92,7 @@ export const Header: React.FC = () => {
   ];
 
   const isLinkActive = (href: string) => {
+    if (href === "/") return pathname === "/";
     const url = new URL(href, "http://localhost");
     const linkCat = url.searchParams.get("category") || "";
     const linkWish = url.searchParams.get("wishlist") === "true";

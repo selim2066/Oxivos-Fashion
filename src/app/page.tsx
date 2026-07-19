@@ -10,8 +10,8 @@ import { Testimonials } from "@/components/home/Testimonials";
 import { CategorySection } from "@/components/home/CategorySection";
 
 export default function Home() {
-  // Get first 3 products for featured new arrivals
-  const featuredProducts = products.slice(0, 3);
+  // Get first 6 products for featured new arrivals
+  const featuredProducts = products.slice(0, 6);
   // Get highest rated products as best sellers
   const bestSellers = products.filter((p) => p.rating >= 4.8).slice(0, 3);
 
