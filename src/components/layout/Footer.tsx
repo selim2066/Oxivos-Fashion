@@ -90,10 +90,10 @@ export const Footer: React.FC = () => {
       <div className="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto flex flex-col">
 
         {/* Top Row: Tagline + Form & Links */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-gutter items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-gutter items-start">
 
           {/* Left Column: Brand Tagline Statement */}
-          <div className="md:col-span-6 flex flex-col gap-6 max-w-md mx-auto text-center items-center">
+          <div className="lg:col-span-6 flex flex-col gap-6 max-w-md mx-auto lg:mx-0 text-center lg:text-left items-center lg:items-start">
             <h3 className="text-headline-sm">
               <Logo />
             </h3>
@@ -102,7 +102,7 @@ export const Footer: React.FC = () => {
             </p>
 
             {/* Newsletter Mini-Form */}
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5 max-w-sm mt-4 mx-auto text-center w-full">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5 max-w-sm mt-4 mx-auto lg:mx-0 text-center lg:text-left w-full">
               <div className="flex flex-col gap-1">
                 <label className="text-[10px] tracking-widest uppercase text-on-surface-variant/70 font-bold">
                   Name
@@ -111,7 +111,7 @@ export const Footer: React.FC = () => {
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="bg-transparent border-b border-dashed border-outline-variant/70 py-1.5 focus:border-solid focus:border-primary focus:outline-none transition-all text-primary font-sans text-body-md placeholder:text-on-surface-variant/30 text-center"
+                  className="bg-transparent border-b border-dashed border-outline-variant/70 py-1.5 focus:border-solid focus:border-primary focus:outline-none transition-all text-primary font-sans text-body-md placeholder:text-on-surface-variant/30 text-center lg:text-left"
                   placeholder="Your name"
                 />
               </div>
@@ -126,7 +126,7 @@ export const Footer: React.FC = () => {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="bg-transparent border-b border-dashed border-outline-variant/70 py-1.5 focus:border-solid focus:border-primary focus:outline-none transition-all text-primary font-sans text-body-md placeholder:text-on-surface-variant/30 w-full pr-10 text-center"
+                    className="bg-transparent border-b border-dashed border-outline-variant/70 py-1.5 focus:border-solid focus:border-primary focus:outline-none transition-all text-primary font-sans text-body-md placeholder:text-on-surface-variant/30 w-full pr-10 text-center lg:text-left"
                     placeholder="Your email address"
                   />
                   <button
@@ -140,7 +140,7 @@ export const Footer: React.FC = () => {
               </div>
 
               {subscribed && (
-                <p className="text-label-sm text-secondary uppercase font-bold animate-pulse">
+                <p className="text-label-sm text-secondary uppercase font-bold animate-pulse text-center lg:text-left">
                   Thank you for subscribing.
                 </p>
               )}
@@ -148,10 +148,10 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Right Column: Nav Links & Social links */}
-          <div className="md:col-span-6 flex flex-row gap-16 md:gap-24 justify-center mt-4 md:mt-0 text-center w-full">
+          <div className="lg:col-span-6 flex flex-row gap-16 md:gap-24 justify-center lg:justify-start mt-4 lg:mt-0 text-center lg:text-left w-full">
 
             {/* Quick Links Menu */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 lg:items-start">
               <span className="text-[10px] tracking-[0.2em] uppercase text-on-surface-variant/60 font-bold">
                 Explore
               </span>
@@ -184,7 +184,7 @@ export const Footer: React.FC = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-4 lg:items-start">
               <span className="text-[10px] tracking-[0.2em] uppercase text-on-surface-variant/60 font-bold">
                 Social
               </span>
@@ -232,7 +232,7 @@ export const Footer: React.FC = () => {
         <div className="relative flex flex-col w-full overflow-hidden select-none pb-4">
 
           {/* Top Tagline positioned above wordmark on desktop, below on mobile */}
-          <div className="mb-4 md:mb-0 md:absolute md:top-2 md:right-0 text-left md:text-right z-10">
+          <div className="mb-4 lg:mb-0 lg:absolute lg:top-2 lg:right-0 text-center lg:text-left z-10">
             <span className="text-label-sm uppercase tracking-widest text-on-surface-variant font-bold">
               Design, Product & Craft
             </span>
@@ -248,7 +248,7 @@ export const Footer: React.FC = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="font-heading font-black uppercase text-primary leading-none w-full whitespace-nowrap"
+              className="font-heading font-black uppercase text-primary leading-none w-full whitespace-nowrap text-center lg:text-left"
               style={{
                 fontSize: "clamp(2rem, 8.8vw, 7.8rem)",
                 letterSpacing: "-0.04em",
@@ -260,9 +260,9 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Final Bar: Copyright & Terms */}
-        <div className="flex flex-col items-center justify-center gap-4 mt-6 pt-6 border-t border-outline-variant/20 text-label-sm text-on-surface-variant w-full text-center">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-start gap-4 lg:gap-12 mt-6 pt-6 border-t border-outline-variant/20 text-label-sm text-on-surface-variant w-full text-center lg:text-left">
           <p>© 2026 <Logo className="text-sm mx-1" /> All rights reserved.</p>
-          <div className="flex gap-6 text-label-sm justify-center">
+          <div className="flex gap-6 text-label-sm justify-center lg:justify-start">
             <a href="#" className="hover:text-primary transition-colors duration-200">Privacy Policy</a>
             <a href="#" className="hover:text-primary transition-colors duration-200">Terms of Service</a>
           </div>
