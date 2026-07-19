@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-
+import { Logo } from "../ui/Logo";
 
 // ─── Letter-by-letter animated wordmark ──────────────────────────────────────
 const wordmark = [
@@ -94,8 +94,8 @@ export const Footer: React.FC = () => {
 
           {/* Left Column: Brand Tagline Statement */}
           <div className="md:col-span-6 flex flex-col gap-6 max-w-md">
-            <h3 className="font-heading text-headline-sm text-primary uppercase font-bold tracking-tight">
-              Oxivos Fashion
+            <h3 className="text-headline-sm">
+              <Logo />
             </h3>
             <p className="font-sans text-body-lg text-on-surface-variant leading-relaxed">
               Every stitch has intent — discipline, craft, and quiet elevation. Designed at the intersection of technical performance and refined tailoring.
@@ -261,7 +261,7 @@ export const Footer: React.FC = () => {
 
         {/* Final Bar: Copyright & Terms */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-6 pt-6 border-t border-outline-variant/20 text-label-sm text-on-surface-variant">
-          <p>© 2026 OxivosFashion. All rights reserved.</p>
+          <p>© 2026 <Logo className="text-sm mx-1" /> All rights reserved.</p>
           <div className="flex gap-6 text-label-sm">
             <a href="#" className="hover:text-primary transition-colors duration-200">Privacy Policy</a>
             <a href="#" className="hover:text-primary transition-colors duration-200">Terms of Service</a>

@@ -11,17 +11,7 @@ import { products } from "../../lib/products";
 import { Product } from "../../lib/types";
 import { ThemeToggle } from "../ui/ThemeToggle";
 
-// ─── Brand Wordmark ───────────────────────────────────────────────────────────
-const BrandMark: React.FC<{ className?: string }> = ({ className = "" }) => (
-  <span className={`font-black tracking-tighter ${className}`}>
-    OXIVOS{" "}
-    <span className="italic font-black" style={{ color: "#800020" }}>
-      Fashion
-    </span>
-    <span className="text-error font-black">.</span>
-  </span>
-);
-
+import { Logo } from "../ui/Logo";
 export const Header: React.FC = () => {
   const { cartCount } = useCart();
   const { wishlistItems } = useWishlist();
@@ -147,7 +137,7 @@ export const Header: React.FC = () => {
                 }`}
               aria-label="Oxivos Fashion home"
             >
-              <BrandMark className="text-base sm:text-lg md:text-xl" />
+              <Logo className="text-base sm:text-lg md:text-xl" />
             </Link>
           </div>
 
@@ -256,11 +246,9 @@ export const Header: React.FC = () => {
               aria-modal="true"
               aria-label="Navigation menu"
             >
-              {/* Drawer header */}
               <div className="flex items-center justify-between px-5 py-4 border-b border-outline-variant/20">
-                <BrandMark className="text-base text-primary" />
+                <Logo className="text-base text-primary" />
                 <button
-                  onClick={() => setIsMobileMenuOpen(false)}
                   className="w-9 h-9 flex items-center justify-center rounded-lg text-primary hover:bg-surface-container transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                   aria-label="Close menu"
                 >
@@ -350,11 +338,9 @@ export const Header: React.FC = () => {
             aria-modal="true"
             aria-label="Search"
           >
-            {/* Search header */}
             <div className="flex items-center justify-between px-4 sm:px-6 md:px-8 py-4 border-b border-outline-variant/20">
-              <BrandMark className="text-sm sm:text-base text-primary" />
+              <Logo className="text-sm sm:text-base text-primary" />
               <button
-                onClick={() => setIsSearchOpen(false)}
                 className="w-9 h-9 flex items-center justify-center rounded-lg text-primary hover:bg-surface-container transition-colors focus:outline-none"
                 aria-label="Close search"
               >
