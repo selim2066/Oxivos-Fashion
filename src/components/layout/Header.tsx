@@ -244,7 +244,7 @@ export const Header: React.FC = () => {
               animate={{ x: 0 }}
               exit={{ x: "-100%" }}
               transition={{ type: "spring", stiffness: 340, damping: 34 }}
-              className="fixed top-0 left-0 bottom-0 z-[70] w-[82vw] max-w-[340px] bg-surface shadow-2xl flex flex-col md:hidden"
+              className="fixed top-0 left-0 bottom-0 z-[70] w-[82vw] max-w-[340px] bg-surface shadow-2xl flex flex-col overflow-y-auto md:hidden"
               role="dialog"
               aria-modal="true"
               aria-label="Navigation menu"
@@ -252,6 +252,7 @@ export const Header: React.FC = () => {
               <div className="flex items-center justify-between px-5 py-4 border-b border-outline-variant/20">
                 <Logo className="text-base text-primary" />
                 <button
+                  onClick={() => setIsMobileMenuOpen(false)}
                   className="w-9 h-9 flex items-center justify-center rounded-lg text-primary hover:bg-surface-container transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                   aria-label="Close menu"
                 >
@@ -260,7 +261,7 @@ export const Header: React.FC = () => {
               </div>
 
               {/* Nav links */}
-              <nav className="flex-1 overflow-y-auto px-3 py-4">
+              <nav className="flex-1 px-3 py-4">
                 <ul className="space-y-1" role="list">
                   {navLinks.map((link, i) => {
                     const active = isLinkActive(link.href);
