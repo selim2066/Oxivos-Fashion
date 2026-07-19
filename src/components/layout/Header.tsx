@@ -89,6 +89,7 @@ export const Header: React.FC = () => {
     { label: "Women", href: "/products?category=Women" },
     { label: "Kids", href: "/products?category=Kids" },
     { label: "Accessories", href: "/products?category=Accessories" },
+    { label: "About", href: "/about" },
   ];
 
   const isLinkActive = (href: string) => {
@@ -113,8 +114,8 @@ export const Header: React.FC = () => {
       {/* ─── Main Navbar ──────────────────────────────────────────────────────── */}
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-300 ease-in-out ${navActive
-            ? "bg-surface/92 backdrop-blur-xl shadow-sm border-b border-outline-variant/20 py-2.5"
-            : "bg-transparent py-4 border-b border-transparent"
+          ? "bg-surface/92 backdrop-blur-xl shadow-sm border-b border-outline-variant/20 py-2.5"
+          : "bg-transparent py-4 border-b border-transparent"
           }`}
       >
         <div className="flex items-center justify-between w-full px-4 sm:px-6 md:px-8 lg:px-12 max-w-[1440px] mx-auto h-12">
@@ -152,12 +153,12 @@ export const Header: React.FC = () => {
                   key={link.label}
                   href={link.href}
                   className={`relative px-3 py-1.5 text-[11px] lg:text-xs font-bold uppercase tracking-widest rounded transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${active
-                      ? isTransparent
-                        ? "text-white"
-                        : "text-primary"
-                      : isTransparent
-                        ? "text-white/70 hover:text-white"
-                        : "text-on-surface-variant hover:text-primary"
+                    ? isTransparent
+                      ? "text-white"
+                      : "text-primary"
+                    : isTransparent
+                      ? "text-white/70 hover:text-white"
+                      : "text-on-surface-variant hover:text-primary"
                     }`}
                 >
                   {link.label}
@@ -273,8 +274,8 @@ export const Header: React.FC = () => {
                         <Link
                           href={link.href}
                           className={`flex items-center justify-between px-4 py-3.5 rounded-xl text-sm font-bold uppercase tracking-widest transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-primary ${active
-                              ? "text-primary"
-                              : "text-on-surface-variant hover:text-primary hover:bg-surface-container"
+                            ? "text-primary"
+                            : "text-on-surface-variant hover:text-primary hover:bg-surface-container"
                             }`}
                           style={active ? { borderLeft: "3px solid #800020", paddingLeft: "13px" } : {}}
                         >

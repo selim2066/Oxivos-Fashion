@@ -13,7 +13,7 @@ const wordmark = [
   { text: "Fashion", italic: true, color: "#800020" },
 ];
 
-const AnimatedWordmark: React.FC = () => {
+export const AnimatedWordmark: React.FC = () => {
   const [hoveredIdx, setHoveredIdx] = React.useState<number | null>(null);
 
   // Build flat array of characters with metadata
@@ -93,7 +93,7 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-gutter items-start">
 
           {/* Left Column: Brand Tagline Statement */}
-          <div className="md:col-span-6 flex flex-col gap-6 max-w-md">
+          <div className="md:col-span-6 flex flex-col gap-6 max-w-md mx-auto text-center items-center">
             <h3 className="text-headline-sm">
               <Logo />
             </h3>
@@ -102,7 +102,7 @@ export const Footer: React.FC = () => {
             </p>
 
             {/* Newsletter Mini-Form */}
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5 max-w-sm mt-4">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-5 max-w-sm mt-4 mx-auto text-center w-full">
               <div className="flex flex-col gap-1">
                 <label className="text-[10px] tracking-widest uppercase text-on-surface-variant/70 font-bold">
                   Name
@@ -111,7 +111,7 @@ export const Footer: React.FC = () => {
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="bg-transparent border-b border-dashed border-outline-variant/70 py-1.5 focus:border-solid focus:border-primary focus:outline-none transition-all text-primary font-sans text-body-md placeholder:text-on-surface-variant/30"
+                  className="bg-transparent border-b border-dashed border-outline-variant/70 py-1.5 focus:border-solid focus:border-primary focus:outline-none transition-all text-primary font-sans text-body-md placeholder:text-on-surface-variant/30 text-center"
                   placeholder="Your name"
                 />
               </div>
@@ -126,7 +126,7 @@ export const Footer: React.FC = () => {
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="bg-transparent border-b border-dashed border-outline-variant/70 py-1.5 focus:border-solid focus:border-primary focus:outline-none transition-all text-primary font-sans text-body-md placeholder:text-on-surface-variant/30 w-full pr-10"
+                    className="bg-transparent border-b border-dashed border-outline-variant/70 py-1.5 focus:border-solid focus:border-primary focus:outline-none transition-all text-primary font-sans text-body-md placeholder:text-on-surface-variant/30 w-full pr-10 text-center"
                     placeholder="Your email address"
                   />
                   <button
@@ -148,7 +148,7 @@ export const Footer: React.FC = () => {
           </div>
 
           {/* Right Column: Nav Links & Social links */}
-          <div className="md:col-span-6 flex flex-row gap-16 md:gap-24 md:justify-end mt-4 md:mt-0">
+          <div className="md:col-span-6 flex flex-row gap-16 md:gap-24 justify-center mt-4 md:mt-0 text-center w-full">
 
             {/* Quick Links Menu */}
             <div className="flex flex-col gap-4">
@@ -175,7 +175,7 @@ export const Footer: React.FC = () => {
                   Support
                 </Link>
                 <Link
-                  href="#"
+                  href="/about"
                   className="text-label-md uppercase tracking-wider text-primary hover:underline decoration-1 underline-offset-4 transition-all"
                 >
                   About
@@ -243,7 +243,7 @@ export const Footer: React.FC = () => {
             {/* Small red/accent dot above first letter 'O' */}
             <div className="absolute left-[3px] top-3.5 md:top-4 w-2 md:w-2.5 h-2 md:h-2.5 rounded-full bg-[#ba1a1a]" />
 
-                         <motion.h2
+            <motion.h2
               initial={{ opacity: 0, scale: 0.96 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
@@ -260,9 +260,9 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Final Bar: Copyright & Terms */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-6 pt-6 border-t border-outline-variant/20 text-label-sm text-on-surface-variant">
+        <div className="flex flex-col items-center justify-center gap-4 mt-6 pt-6 border-t border-outline-variant/20 text-label-sm text-on-surface-variant w-full text-center">
           <p>© 2026 <Logo className="text-sm mx-1" /> All rights reserved.</p>
-          <div className="flex gap-6 text-label-sm">
+          <div className="flex gap-6 text-label-sm justify-center">
             <a href="#" className="hover:text-primary transition-colors duration-200">Privacy Policy</a>
             <a href="#" className="hover:text-primary transition-colors duration-200">Terms of Service</a>
           </div>

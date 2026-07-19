@@ -66,9 +66,9 @@ export const ProductDetailsClient: React.FC<ProductDetailsClientProps> = ({ prod
         <span className="text-primary font-semibold">{product.name}</span>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter lg:gap-unit-xl">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter md:gap-unit-xl">
         {/* Left Side: Image Gallery (7 columns) */}
-        <div className="lg:col-span-7 flex flex-col gap-unit-md">
+        <div className="md:col-span-7 flex flex-col gap-unit-md">
           {/* Main Active Image */}
           <div className="w-full aspect-[4/5] bg-card-bg rounded overflow-hidden relative group">
             {!product.inStock && (
@@ -107,7 +107,7 @@ export const ProductDetailsClient: React.FC<ProductDetailsClientProps> = ({ prod
         </div>
 
         {/* Right Side: Product Info (5 columns) */}
-        <div className="lg:col-span-5 flex flex-col pt-unit-md lg:pt-0">
+        <div className="md:col-span-5 flex flex-col pt-unit-md md:pt-0">
           <div className="mb-unit-lg">
             <span className="text-label-sm uppercase text-secondary font-bold tracking-widest block mb-1">
               {product.category}&apos;s Collection

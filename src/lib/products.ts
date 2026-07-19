@@ -61,7 +61,7 @@ export const products: Product[] = [
       "https://images.unsplash.com/photo-1578681994506-b8f463449011?w=800&auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?w=800&auto=format&fit=crop&q=80"
     ],
-    rating: 4.7,
+    rating: 4.8,
     colors: ["Sand", "Olive", "Obsidian"],
     sizes: ["30", "32", "34", "36"],
     inStock: true,
@@ -131,7 +131,7 @@ export const products: Product[] = [
     price: 75,
     image: "https://images.unsplash.com/photo-1578897367002-2873f26520fd?w=800&auto=format&fit=crop&q=80",
     images: [
-      "https://images.unsplash.com/photo-157889737002-2873f26520fd?w=800&auto=format&fit=crop&q=80"
+      "https://images.unsplash.com/photo-1578897367002-2873f26520fd?w=800&auto=format&fit=crop&q=80"
     ],
     rating: 4.5,
     colors: ["Charcoal", "Cream"],

@@ -5,9 +5,10 @@ import "./globals.css";
 import { CartProvider } from "../context/CartContext";
 import { WishlistProvider } from "../context/WishlistContext";
 import { Header } from "../components/layout/Header";
-import { Footer } from "../components/layout/Footer";
+import { ConditionalFooter } from "../components/layout/ConditionalFooter";
 import { SmoothScroll } from "../components/layout/SmoothScroll";
 import { ThemeProvider } from "../components/theme-provider";
+import { Toaster } from "sonner";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -50,13 +51,14 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
+            <Toaster position="bottom-right" theme="system" closeButton richColors duration={4000} />
             <CartProvider>
               <WishlistProvider>
                 <Suspense fallback={<div className="h-16 bg-surface" />}>
                   <Header />
                 </Suspense>
                 <div className="flex-grow flex flex-col">{children}</div>
-                <Footer />
+                <ConditionalFooter />
               </WishlistProvider>
             </CartProvider>
           </ThemeProvider>

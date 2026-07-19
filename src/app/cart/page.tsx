@@ -8,6 +8,7 @@ import { ProductCard } from "@/components/ui/ProductCard";
 import { EmptyState } from "@/components/ui/EmptyState";
 import { products } from "@/lib/products";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 export default function CartPage() {
   const {
@@ -38,7 +39,7 @@ export default function CartPage() {
   const displayUpsells = upsellProducts.length > 0 ? upsellProducts : products.slice(7, 10);
 
   const handleCheckout = () => {
-    alert("This is a frontend demonstration. Your order total would be $" + grandTotal.toFixed(2));
+    toast.success(`Order confirmed — $${grandTotal.toFixed(2)}`);
     clearCart();
   };
 

@@ -13,7 +13,7 @@ export default function Home() {
   // Get first 6 products for featured new arrivals
   const featuredProducts = products.slice(0, 6);
   // Get highest rated products as best sellers
-  const bestSellers = products.filter((p) => p.rating >= 4.8).slice(0, 3);
+  const bestSellers = products.filter((p) => p.rating >= 4.8).slice(0, 4);
 
   return (
     <main className="bg-surface text-on-surface min-h-screen overflow-x-hidden pt-0">
@@ -40,7 +40,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-gutter">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-gutter">
           {bestSellers.map((product) => (
             <div key={product.id} className="flex flex-col">
               <ProductCard product={product} />
